@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<!--THIS IS THE CURRENT HEADER AS SEEN ON ALL PAGES. START-->
+    <head>
+        <link href="https://db.onlinewebfonts.com/c/b8e43844aee2ac9d9e78518e974389d9?family=Halyard+Display+Book" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"></span><span class="title">Sheila Zhang</span>
+								</a>
+
+								
+							<!-- Nav -->
+							<nav class="navbar">
+								<ul>
+									<!-- this nav bar goes to different section on same page -->
+									<li><a href="index.html">Home</a></li>
+									<li><a href="#about">About Me</a></li> 
+									<li><a href="#work">Work</a></li>
+									<li><a href="#projects">Projects</a></li>
+									<li><a href="#resume">Resume</a></li>
+									
+
+									<!-- this nav goes to a separate page -->
+									<!-- <li><a href="index.html">Home</a></li>
+									<li><a href="generic.html">Work</a></li>
+									<li><a href="generic.html">Projects</a></li>
+									<li><a href="generic.html">Resume</a></li>
+									<li><a href="elements.html">About Me</a></li> -->
+								</ul>
+							</nav>
+
+						</div>
+					</header>
+
+			<!-- FOOTER  -->
+
+				<footer class = "footer">
+					<div class = "container">
+						<div class = "row">
+							<div class ="footer-col">
+								<h4>@2024 by Sheila Zhang</h4>
+						
+							</div>
+							<div class ="footer-col-right">
+								<h4>Feel free to reach me at <a target="_blank" href="mailto: sheilazhang@utexas.edu">sheilazhang@utexas.edu</a>!</h4>
+							</div>
+						</div>
+					</div>
+				</footer>
+
+        <style>
+		body, input, select, textarea {
+			color: #8EB69B;
+			font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 16pt;
+			font-weight: 300;
+			line-height: 1.75;
+		}
+
+		@media screen and (max-width: 1680px) {
+
+			body, input, select, textarea {
+				font-size: 20pt;
+			}
+
+		}
+
+		/*style for the header, like color changing speed*/
+		a {
+			-moz-transition: border-bottom-color 0.2s ease, color 0.2s ease;
+			-webkit-transition: border-bottom-color 0.2s ease, color 0.2s ease;
+			-ms-transition: border-bottom-color 0.2s ease, color 0.2s ease;
+			transition: border-bottom-color 0.2s ease, color 0.2s ease;
+			text-decoration: none;
+			color: #235347;
+                border-bottom: none;
+		}
+
+		/*this makes the header and nav bar turn pink when hovering*/
+		a:hover {
+			border-bottom-color: transparent;
+			color: #fcd9d8 !important;
+		}
+            
+		/* keep this chunk, it's important */
+            #header .logo {
+                display: block;
+                border-bottom: 0;
+                color: #235347;
+                font-weight: 900;
+                letter-spacing: 0.02em;
+                margin: 0 0 2.5em 0;
+                text-decoration: none;
+                text-transform: none;
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding-left: 10%;
+                padding: 10px;
+                font-size: 1.3em;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+
+		/*this keeps the logo margin in place*/
+		#header .logo .symbol {
+			margin-right: 0.65em;
+		}
+		
+		#header nav {
+			position: absolute;
+			right: 2em;
+			top: 2em;
+			z-index: 10000;
+			top: 0;
+			right: 0;
+			z-index: 10002;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1em 2em;
+			box-sizing: border-box;
+			font-size: 0.65em;
+			font: poppins;
+		}
+
+			#header nav ul {
+				display: flex;
+				align-items: center;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+ 
+			}
+
+				#header nav ul li {
+					display: block;
+					padding: 0;
+				}
+
+					#header nav ul li a {
+						display: block;
+						position: relative;
+						height: 3em;
+						line-height: 3em;
+						padding: 0 1.5em;
+						border-radius: 4px;
+						border: 0;
+						font-size: 0.8em;
+						font-weight: 400;
+						letter-spacing: 0;
+						text-transform: none;
+						color: #235347;
+					}
+
+					#header nav ul li a[href="#menu"] {
+						-webkit-tap-highlight-color: transparent;
+						width: 417em;
+						text-indent: 4em;
+						font-size: 1em;
+						overflow: hidden;
+						padding: 0;
+						white-space: nowrap;
+					}
+
+						#header nav ul li a[href="#menu"]:before, #header nav ul li a[href="#menu"]:after {
+							-moz-transition: opacity 0.2s ease;
+							-webkit-transition: opacity 0.2s ease;
+							-ms-transition: opacity 0.2s ease;
+							transition: opacity 0.2s ease;
+							content: '';
+							display: block;
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							background-position: center;
+							background-repeat: no-repeat;
+							background-size: 2em 2em;
+						}
+
+					
+
+		@media screen and (max-width: 736px) {
+
+			#header {
+				padding: 4em 0 0.1em 0 ;
+			}
+
+				#header nav {
+					right: 0.5em;
+					top: 0.5em;
+				}
+
+					#header nav ul li a[href="#menu"]:before, #header nav ul li a[href="#menu"]:after {
+						background-size: 1.5em 1.5em;
+					} 
+
+				}
+
+			/* ----------- FOOTER -----------*/
+			*{
+				margin:0;
+				padding:0;
+				box-sizing: border-box;
+			}
+
+			.container{
+				max-width: 1300px;
+				background-color: #ffffff;
+				margin:auto;
+			}
+			.row{
+				display: flex;
+				margin-top: 80px;
+				margin-bottom: 20px;
+				justify-content: space-between;
+			}
+			.footer-col{
+				flex: 1;
+				padding: 0 15px;
+				text-align: left; /* Ensure text is aligned to the left */
+			}
+			.footer-col-right{
+				text-align: right; /* Align text to the right for the second column */
+
+			}
+			.footer-col h4{
+				font-size: 14px;
+				letter-spacing: normal;
+				margin-bottom: 30px;
+				font-weight: 400;
+				font-family: Arial, Helvetica, sans-serif;
+				width: 25%;
+				padding: 0 15px;
+				position: relative;
+				line-height: 1.5em;
+				text-align: left;
+				margin: 0 0 1.5rem 0;
+				color: black;
+			}
+			.footer-col-right h4{
+				font-size: 17px;
+				letter-spacing: normal;
+				margin-bottom: 30px;
+				font-weight: 500px;
+				font-family: Arial, Helvetica, sans-serif;
+				width: 100%;
+				padding: 0 15px;
+				position: relative;
+				line-height: 1.5em;
+				text-align: left;
+				color:#235347;
+			}
+
+
+        </style>
+    </body>
+</html>
