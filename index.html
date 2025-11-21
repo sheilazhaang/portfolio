@@ -175,7 +175,7 @@
 					<nav class="navbar">
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="#about">About Me</a></li> 
+							<li><a href="about.html">About Me</a></li> 
 							<li><a href="#work">Work</a></li>
 							<li><a href="all-projects.html">Projects</a></li>
 							<li><a href="pdfs/RESUME - SHEILA ZHANG.docx (6).pdf" target="_blank" rel="noopener">Resume</a></li>
@@ -283,7 +283,7 @@
 									<br><br>
 									When I'm not strategizing product ideas, you'll find me hiking, playing pickleball, or having brunch at one of Austin's many great spots! :)
 								</p>
-								<a href="" class="cs-button-solid">Learn More!</a>        
+								<a href="about.html" class="cs-button-solid">Learn More!</a>        
 							</div>
 						</div>
 					</section>
@@ -356,6 +356,33 @@
 								background-color: #3D7256;
 								color: white;
 							}
+							
+							/* Read More button container - pushes to bottom of card */
+							#projects .read-more-container {
+								margin-top: auto;
+								width: 100%;
+							}
+							
+							/* Read More button styling */
+							#projects .read-more-btn {
+								display: inline-block;
+								padding: 4px 10px;
+								background-color: #fce4ec;
+								color: #f2849e;
+								border: 2px solid #f2849e;
+								border-radius: 4px;
+								font-family: Poppins, sans-serif;
+								font-size: 0.65rem;
+								font-weight: 600;
+								text-decoration: none;
+								transition: all 0.3s ease;
+								cursor: pointer;
+							}
+							
+							#projects .read-more-btn:hover {
+								background-color: #f2849e;
+								color: white;
+							}
 						</style>
 						
 						<div class="cs-container">
@@ -381,14 +408,15 @@
 											<span class="cs-skill-tag">Knowledge Base Curation</span>
 											<span class="cs-skill-tag">Retrieval Evaluation</span>
 										</div>
-										<p class="cs-item-text">
-											A RAG-based assistant that retrieves policy/product info to answer customer support queries.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										Built a Retrieval-Augmented Generation (RAG) system with LangChain and LLM APIs to act as a virtual customer service agent for top retailers, answering common customer inquiries.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- Tertia -->
@@ -405,14 +433,15 @@
 											<span class="cs-skill-tag">Product Strategy</span>
 											<span class="cs-skill-tag">POC Design & Testing</span>
 										</div>
-										<p class="cs-item-text">
-											A platform designed for middle-tier content creators to combat burnout by automating routine tasks and content workflows, helping them maintain engagement even when they're offline.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										A platform designed for middle-tier content creators to combat burnout by automating routine tasks and content workflows, helping them maintain engagement even when they're offline.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- Facial Emotion Detector -->
@@ -427,40 +456,42 @@
 										<div class="cs-skills">
 											<span class="cs-skill-tag">Computer Vision & Face Detection</span>
 											<span class="cs-skill-tag">Deep Learning (CNN)</span>
-											<span class="cs-skill-tag">OpenCV & Real-time Processing</span>
 										</div>
-										<p class="cs-item-text">
-											Built a computer vision system that captures live webcam footage, detects faces using RetinaFace, and classifies emotions into 7 categories (happy, sad, angry, neutral, surprise, fear, disgust) using DeepFace's pre-trained CNN model.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										Built a computer vision system that captures live webcam footage, detects faces using RetinaFace, and classifies emotions into 7 categories using DeepFace's pre-trained CNN model.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
-								<!-- DataOps Pipeline -->
+								<!-- Real-Time Customer Shopping Dashboard -->
 								<li class="cs-item">
-									<a href="llm-dataops.html" class="cs-link">
+									<a href="#" class="cs-link">
 										<picture class="cs-picture">
-											<source media="(max-width: 600px)" srcset="images/dataopds.png">
-											<source media="(min-width: 601px)" srcset="images/dataopds.png">
-											<img loading="lazy" decoding="async" src="images/dataopds.png" alt="DataOps Pipeline">
+											<source media="(max-width: 600px)" srcset="images/database app.png">
+											<source media="(min-width: 601px)" srcset="images/database app.png">
+											<img loading="lazy" decoding="async" src="images/database app.png" alt="Customer Shopping Dashboard">
 										</picture>
-										<h3 class="cs-h3">DataOps Pipeline for Common Business Challenges</h3>
+										<h3 class="cs-h3">Real-Time Customer Shopping Dashboard</h3>
 										<div class="cs-skills">
-											<span class="cs-skill-tag">Prompt Engineering</span>
-											<span class="cs-skill-tag">LLM Data Collection</span>
-											<span class="cs-skill-tag">LLM Evaluations</span>
+											<span class="cs-skill-tag">Cloud Integration</span>
+											<span class="cs-skill-tag">AWS</span>
+											<span class="cs-skill-tag">Data Modeling</span>
+											<span class="cs-skill-tag">Data Visualization</span>
 										</div>
-										<p class="cs-item-text">
-											An LLM-powered pipeline to automate data collection, labeling, and evaluation for production-ready datasets.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										Built a database-backed web application using AWS and Budibase that displays live customer shopping data pulled directly from a cloud-hosted database in real time.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- Negotiation Agents -->
@@ -477,14 +508,15 @@
 											<span class="cs-skill-tag">Agent Design</span>
 											<span class="cs-skill-tag">Prompt Engineering</span>
 										</div>
-										<p class="cs-item-text">
-											A multi-agent LLM system that simulates negotiation scenarios to study automated bargaining strategies.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										A multi-agent LLM system that simulates negotiation scenarios to study automated bargaining strategies.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- Conversation Summarizer -->
@@ -501,14 +533,15 @@
 											<span class="cs-skill-tag">Data Preparation</span>
 											<span class="cs-skill-tag">Hyperparameter Tuning</span>
 										</div>
-										<p class="cs-item-text">
-											Fine-tuned and aligned Llama-3.2-1B to summarize business conversations and generate company-style responses, optimizing quality using preference data.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										Fine-tuned and aligned Llama-3.2-1B to summarize business conversations and generate company-style responses, optimizing quality using preference data.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 							</ul>
 						</div>
@@ -568,7 +601,7 @@
 						<h4>@2025 by Sheila Zhang</h4>
 					</div>
 					<div class="footer-col-right">
-						<h4 style="font-weight: 600; color: #f2849e;">🌟 Let's connect at <a target="_blank" href="mailto:sheilazhang@utexas.edu" style="text-decoration: none;">sheilazhang@utexas.edu</a>!</h4>
+						<h4 style="font-weight: 750; color: #f2849e;">🌟 Let's connect at <a target="_blank" href="mailto:sheilazhang@utexas.edu" style="text-decoration: none; border-bottom: none;">sheilazhang@utexas.edu</a>!</h4>
 					</div>
 				</div>
 			</div>

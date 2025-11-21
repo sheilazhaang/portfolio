@@ -180,10 +180,15 @@
 							
 							/* Project descriptions */
 							#all-projects .cs-item-text {
-								font-size: 0.9rem;
+								font-size: 0.8rem;
 								flex-grow: 1;
 								min-height: 80px;
-								margin-bottom: 0.5rem;
+								margin-bottom: 0.25rem;
+							}
+							
+							/* Reduce spacing for last 6 projects */
+							#all-projects .cs-item:nth-last-child(-n+6) .cs-item-text {
+								margin-bottom: 0.1rem;
 							}
 							
 							/* "Read More" links */
@@ -207,10 +212,10 @@
 								display: inline-block;
 								background-color: #E8F5E9;
 								color: #3D7256;
-								padding: 0.28rem 0.65rem;
+								padding: 0.22rem 0.55rem;
 								border-radius: 9999px;
 								border: 1px solid #3D7256;
-								font-size: 0.75rem;
+								font-size: 0.62rem;
 								font-weight: 650;
 								text-transform: uppercase;
 								letter-spacing: 0.5px;
@@ -235,6 +240,35 @@
 								display: flex;
 								flex-direction: column;
 								height: 100%;
+								text-decoration: none;
+								border-bottom: none;
+							}
+							
+							/* Read More button container - pushes to bottom of card */
+							#all-projects .read-more-container {
+								margin-top: auto;
+								width: 100%;
+							}
+							
+							/* Read More button styling */
+							#all-projects .read-more-btn {
+								display: inline-block;
+								padding: 4px 10px;
+								background-color: #fce4ec;
+								color: #f2849e;
+								border: 2px solid #f2849e;
+								border-radius: 4px;
+								font-family: Poppins, sans-serif;
+								font-size: 0.65rem;
+								font-weight: 600;
+								text-decoration: none;
+								transition: all 0.3s ease;
+								cursor: pointer;
+							}
+							
+							#all-projects .read-more-btn:hover {
+								background-color: #f2849e;
+								color: white;
 							}
 							
 							/* ============================================
@@ -319,14 +353,15 @@
 											<span class="cs-skill-tag">Product Strategy</span>
 											<span class="cs-skill-tag">POC Design & Testing</span>
 										</div>
-										<p class="cs-item-text">
-											A platform designed for middle-tier content creators to combat burnout by automating routine tasks and content workflows, helping them maintain engagement even when they're offline.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										A platform designed for middle-tier content creators to combat burnout by automating routine tasks and content workflows, helping them maintain engagement even when they're offline.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- Real-Time Facial Emotion Detector -->
@@ -341,16 +376,16 @@
 										<div class="cs-skills">
 											<span class="cs-skill-tag">Computer Vision & Face Detection</span>
 											<span class="cs-skill-tag">Deep Learning (CNN)</span>
-											<span class="cs-skill-tag">OpenCV & Real-time Processing</span>
 										</div>
-										<p class="cs-item-text">
-											Built a computer vision system that captures live webcam footage, detects faces using RetinaFace, and classifies emotions into 7 categories using DeepFace's pre-trained CNN model.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										Built a computer vision system that captures live webcam footage, detects faces using RetinaFace, and classifies emotions into 7 categories using DeepFace's pre-trained CNN model.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- SafePace -->
@@ -368,14 +403,15 @@
 											<span class="cs-skill-tag">Pitching</span>
 											<span class="cs-skill-tag">User Research</span>
 										</div>
-										<p class="cs-item-text">
-											Safe Pace is a safety-first running app and all-female community that helps women feel safer running alone through real-time safety alerts, hazard reporting, background-verified users, and social features like nearby runners and run clubs.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										Safe Pace is a safety-first running app and all-female community that helps women feel safer running alone through real-time safety alerts, hazard reporting, background-verified users, and social features like nearby runners and run clubs.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- Real-Time Customer Shopping Dashboard -->
@@ -391,17 +427,17 @@
 											<span class="cs-skill-tag">Cloud Integration</span>
 											<span class="cs-skill-tag">AWS</span>
 											<span class="cs-skill-tag">Data Modeling</span>
-											<span class="cs-skill-tag">Low-Code App Development</span>
 											<span class="cs-skill-tag">Data Visualization</span>
 										</div>
-										<p class="cs-item-text">
-											Built a database-backed web application using AWS and Budibase that displays live customer shopping data pulled directly from a cloud-hosted database in real time.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										Built a database-backed web application using AWS and Budibase that displays live customer shopping data pulled directly from a cloud-hosted database in real time.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- AI & LLM Projects -->
@@ -420,14 +456,15 @@
 											<span class="cs-skill-tag">LLM Data Collection</span>
 											<span class="cs-skill-tag">LLM Evaluations</span>
 										</div>
-										<p class="cs-item-text">
-											An LLM-powered pipeline to automate data collection, labeling, and evaluation for production-ready datasets.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										An LLM-powered pipeline to automate data collection, labeling, and evaluation for production-ready datasets.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- E-Commerce RAG Assistant -->
@@ -445,14 +482,15 @@
 											<span class="cs-skill-tag">Knowledge Base Curation</span>
 											<span class="cs-skill-tag">Retrieval Evaluation</span>
 										</div>
-										<p class="cs-item-text">
-											A RAG-based assistant that retrieves policy/product info to answer customer support queries.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										A RAG-based assistant that retrieves policy/product info to answer customer support queries.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- Conversation Summarizer -->
@@ -469,14 +507,15 @@
 											<span class="cs-skill-tag">Data Preparation</span>
 											<span class="cs-skill-tag">Hyperparameter Tuning</span>
 										</div>
-										<p class="cs-item-text">
-											Fine-tuned and aligned Llama-3.2-1B to summarize business conversations and generate company-style responses, optimizing quality using preference data.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										Fine-tuned and aligned Llama-3.2-1B to summarize business conversations and generate company-style responses, optimizing quality using preference data.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- Negotiation Agents -->
@@ -494,13 +533,14 @@
 											<span class="cs-skill-tag">Prompt Engineering</span>
 										</div>
 										<p class="cs-item-text">
-											A multi-agent LLM system that simulates negotiation scenarios to study automated bargaining strategies.
-										</p>
-										<span class="cs-fake-link">
+										A multi-agent LLM system that simulates negotiation scenarios to study automated bargaining strategies.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- Earlier Projects -->
@@ -519,14 +559,15 @@
 											<span class="cs-skill-tag">Mobile App Design</span>
 											<span class="cs-skill-tag">User Research</span>
 										</div>
-										<p class="cs-item-text">
-											A mobile dating app centered on shared health and wellness goals.
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										A mobile dating app centered on shared health and wellness goals.
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 								
 								<!-- CRISPR Off-Target Framework -->
@@ -543,33 +584,34 @@
 											<span class="cs-skill-tag">Genomics</span>
 											<span class="cs-skill-tag">Research</span>
 										</div>
-										<p class="cs-item-text">
-											2-year long computational biology and genomics research project to identify off-target edits in CRISPR. 
-										</p>
-										<span class="cs-fake-link">
+									<p class="cs-item-text">
+										2-year long computational biology and genomics research project to identify off-target edits in CRISPR. 
+									</p>
+									<!-- <div class="read-more-container">
+										<span class="read-more-btn">
 											Read More
-											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
 										</span>
-									</a>
+									</div> -->
+								</a>
 								</li>
 							</ul>
-						</div>
-					</section>
-				</div>
+					</div>
+				</section>
 			</div>
 		</div>
+	</div>
 
-		<!-- ========================================== -->
-		<!-- FOOTER                                     -->
-		<!-- ========================================== -->
-	<footer class="footer">
+	<!-- ========================================== -->
+	<!-- FOOTER                                     -->
+	<!-- ========================================== -->
+	<footer class="footer" style="margin-top: 4rem;">
 		<div class="container">
 			<div class="row">
 				<div class="footer-col">
 					<h4>@2025 by Sheila Zhang</h4>
 				</div>
 				<div class="footer-col-right">
-					<h4 style="font-weight: 600; color: #f2849e;">🌟 Let's connect at <a target="_blank" href="mailto:sheilazhang@utexas.edu" style="text-decoration: none;">sheilazhang@utexas.edu</a>!</h4>
+					<h4 style="font-weight: 750; color: #f2849e;">🌟 Let's connect at <a target="_blank" href="mailto:sheilazhang@utexas.edu" style="text-decoration: none; border-bottom: none;">sheilazhang@utexas.edu</a>!</h4>
 				</div>
 			</div>
 		</div>
