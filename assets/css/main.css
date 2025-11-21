@@ -3,6 +3,11 @@
 @import url('https://db.onlinewebfonts.com/c/b8e43844aee2ac9d9e78518e974389d9?family=Halyard+Display+Book');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* CSS Theme variables */
+:root {
+	--primary: #3D7256; /* main green */
+	--accent-pink: #ffb7c6; /* highlight pink */
+}
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -92,6 +97,11 @@ input, select, textarea {
 		box-sizing: border-box;
 	}
 
+	/* Prevent page horizontal scrolling caused by wide elements; keep page vertical scroll normal */
+	html, body {
+	    overflow-x: hidden;
+	}
+
 	*, *:before, *:after {
 		box-sizing: inherit;
 	}
@@ -114,7 +124,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: #8EB69B;
+		color: var(--primary);
 		font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
@@ -149,7 +159,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #fcd9d8 !important;
+			color: #ffb7c6 !important;
 		}
 
 	strong, b {
@@ -164,18 +174,7 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
-	h1 {
-		font-size: 2.75em;
-		font-weight: 700;
-		line-height: 1.3;
-		margin: 0 0 1em 0;
-		letter-spacing: none;
-	}
-
-		h1 a {
-			color: inherit;
-		}
-
+    
 		@media screen and (max-width: 736px) {
 
 			h1 {
@@ -1784,14 +1783,15 @@ input, select, textarea {
 /*  HEADER, LOGO, AND NAV BAR (DO NOT TOUCH!!) */
 
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		/* reduce top padding so the Home section sits closer to the top */
+		padding: 4em 0 0.1em 0 ;
 		position: relative;
 	}
 
 		#header .logo {
 			display: block;
 			border-bottom: 0;
-			color: #235347;
+			color: var(--primary);
 			font-weight: 900;
 			letter-spacing: 0.02em;
 			margin: 0 0 2.5em 0;
@@ -1870,7 +1870,7 @@ input, select, textarea {
 						font-weight: 400;
 						letter-spacing: 0;
 						text-transform: none;
-						color: #235347;
+						color: var(--primary);
 					}
 
 					#header nav ul li a[href="#menu"] {
@@ -1905,7 +1905,8 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding: 4em 0 0.1em 0 ;
+				/* mobile: slightly smaller top padding */
+				padding: 2.5em 0 0.1em 0 ;
 			}
 
 				#header nav {
@@ -1932,6 +1933,25 @@ html{
 	scroll-behavior: smooth;
 }
 
+/* Site-wide font: Poppins (falls back to system fonts) */
+body, input, button, textarea, select {
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+/* Force Poppins everywhere (fallbacks kept); using a high-specificity selector to override inline/other rules */
+html, body, #wrapper, .inner, * {
+	font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
+}
+
+/* Utility for screen-reader-only text */
+.sr-only {
+	position: absolute !important;
+	height: 1px; width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+
 
 /*-- -------------------------- -->
 <---  Introduction   HELLO I'M SHEILA  -->
@@ -1944,10 +1964,13 @@ html{
     }
 
     #home .cs-container {
-        width: 100%;
-        /* changes to 1280px at desktop */
-        max-width: 34.375rem;
-        margin: auto;
+		width: 100%;
+		/* allow the intro to span wider on narrow screens but cap with viewport */
+		max-width: 90vw;
+		margin: auto;
+	/* keep some breathing room from the left/right edges; increase by 25px */
+		padding-left: calc(1.5rem + 25px);
+		padding-right: calc(1.5rem + 25px);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1955,84 +1978,182 @@ html{
     }
 
 	#home .cs-content {
-        /* set text align to left if content needs to be left aligned */
-        text-align: left; /* Align text to the left */
-        width: 100%;
-        max-width: 64.625rem;
-        color: #235347;
-        margin-left: 80px;
-        font-size: 60px;  /* this alters the header size */
-        font-family: Arial, Helvetica, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-transform: none;
-    }
+		/* set text align to left if content needs to be left aligned */
+		text-align: left; /* Align text to the left */
+		width: 100%;
+		max-width: none;
+		color: var(--primary);
+		padding-left: 30px; /* REDUCE FROM 80px to 40px */
+		font-size: 60px;  /* this alters the header size */
+		font-family: Arial, Helvetica, sans-serif;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		text-transform: none;
+	}
 
 	#home .cs-title { /*this can alter the margins for header*/
         margin-top: -20px;
         text-transform: none;
         letter-spacing: normal;
-		margin-bottom: -100px;
+		margin-bottom: 10px; /* reduce large negative gap so content flows naturally */
+	/* Keep the greeting on a single line */
+	white-space: nowrap;
     }
 
 	#home .paragraph-text {
-        color: #727272;
-        font-size: 20px;
-        margin: 0; /* Remove default margins */
-        padding: 0; /* Remove default paddings */
-        margin-top: 0px;
-        max-width: 800px; /* Set maximum width for the paragraph */
-    }
+		color: #000000;
+		font-size: 23px;
+		margin: 0;
+		padding: 0;
+		margin-top: 0px;
+		margin-right: 700px;
+		max-width: 900px; /* CHANGE FROM 800px to 900px or 950px */
+	}
 
-	#home .cs-button-solid, .cs-email, .cs-resume {
-        font-size: 1rem;
-        border: 2px solid black;
-        /* 46px - 56px */
-        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-        text-decoration: none;
-        font-weight: 700;
-		text-transform: None;
-        text-align: center;
-		letter-spacing: normal;
-        margin: 0;
-        margin-top: 50px; /* Add margin to separate button from paragraph */
-        color: #235347;
-        border-color: #235347;
-        min-width: 9.375rem;
-        padding: 0 1.5rem;
-        background-color: var(--primary);
-        border-radius: 0rem;
-        display: inline-block;
-        position: relative;
-        z-index: 1;
-        /* prevents padding from adding to the width */
-        box-sizing: border-box;
-		outline: 0;
-		border-radius: .35rem;
-		box-shadow: inset 0 0 0 0px #235347;
-    }
+#home .cs-button-solid, .cs-email, .cs-resume {
+    font-size: 1rem;
+    border: 2px solid black;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: None;
+    text-align: center;
+    letter-spacing: normal;
+    margin: 0;
+    /* REMOVE THIS LINE: margin-top: 18px; */
+	color: var(--primary);
+	border-color: var(--primary);
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    outline: 0;
+    border-radius: .35rem;
+	box-shadow: inset 0 0 0 0px var(--primary);
+}
 
-    #home .cs-button-solid:before, .cs-email:before, .cs-resume:before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 0%;
-        background-color: #235347;
+/* Container for the three buttons (resume left, icons right) */
+.home-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 18px; /* MOVE THE 18px MARGIN HERE INSTEAD */
+}
+
+/* Square icon buttons (LinkedIn / Email) */
+.cs-icon-button {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .35rem;
+    background-color: transparent;
+	border: 2px solid var(--primary);
+	color: var(--primary);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Highlight span for pink bold text */
+.highlight-pink {
+	color: var(--accent-pink) !important;
+    font-weight: 700 !important;
+}
+
+/*
+  Unify button hover behavior and slightly thinner borders.
+  - Use currentColor-aware SVGs (already set) so icons invert color on hover.
+  - Disable the old pseudo-element fill so hover uses background-color transition.
+  - Make borders a bit thinner across buttons.
+*/
+    .cs-button-solid, .cs-resume, .cs-email, .cs-icon-button {
+    	border-width: 1px !important;
+    	border-style: solid !important;
+		border-color: var(--primary) !important;
+    	transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+.cs-button-solid:hover, .cs-resume:hover, .cs-email:hover, .cs-icon-button:hover {
+		background-color: var(--primary) !important;
+		color: #ffffff !important;
+		border-color: var(--primary) !important;
+}
+
+/* Disable the left-to-right pseudo-element fill to avoid double visuals */
+.cs-button-solid::before, .cs-resume::before, .cs-email::before {
+	display: none !important;
+}
+
+	/* Smooth green hover for buttons */
+	.cs-button-solid, .cs-resume, .cs-icon-button {
+		transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
+	}
+	.cs-button-solid:hover, .cs-resume:hover, .cs-icon-button:hover {
+		background-color: var(--primary);
+		color: #ffffff;
+		border-color: var(--primary);
+	}
+
+	.cs-resume {
+		/* keep resume as a rectangular button but aligned left within buttons */
+		height: 48px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 12px;
+		margin-right: 0.5 rem; /* gap between resume and icon buttons */
+		/* remove extra top margin so resume aligns with icon buttons */
+		margin: 0; /* ensure no top offset */
+		min-width: auto;
+		border-width: 1px !important;
+		align-self: center;
+		vertical-align: middle;
+		line-height: 3 !important;
+	}
+
+	/* Ensure icon buttons don't have extra top offset either */
+	.cs-icon-button {
+		margin: 0;
+		align-self: center;
+		vertical-align: middle;
+	}
+
+/* Bold the section headings requested */
+.workplaces {
+    font-weight: 700;
+}
+
+#projects h1 {
+    font-weight: 700;
+}
+
+	#home .cs-button-solid:before, .cs-email:before, .cs-resume:before {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 0%;
+		background-color: var(--primary);
         opacity: 1;
         top: 0;
         left: 0;
         z-index: -1;
         border-radius: 0rem;
         transition: width 0.3s;
-		box-shadow: inset 0 0 0 2px #235347;
+		box-shadow: inset 0 0 0 2px var(--primary);
     }
 
-    #home .cs-button-solid:hover:before, .cs-email:hover:before, .cs-resume:hover:before {
-        width: 100%;
-        background-color: #235347;
-		box-shadow: inset 0 0 0 2px #235347;
-    }
+	#home .cs-button-solid:hover:before, .cs-email:hover:before, .cs-resume:hover:before {
+		width: 100%;
+		background-color: var(--primary);
+		box-shadow: inset 0 0 0 2px var(--primary);
+	}
 
     #home .cs-image-group {
         width: 100%;
@@ -2047,13 +2168,16 @@ html{
 
     #home .cs-picture {
         /* big background image */
-        width: 270px;
-        height: 500px;
+		margin-top: 25px;
+		margin-left: 10px;
+        width: 370px;
+        height: 560px;
         position: absolute;
         top: 0;
         left: 0;
         display: block;
     }
+
 
 	#home .cs-picture img { /*this moves the bitmoji up and down*/
         position: absolute;
@@ -2065,6 +2189,12 @@ html{
         object-fit: cover;
         margin-top: -10px;
     }
+
+	/* Ensure the decorative picture doesn't block clicks on buttons */
+	#home .cs-picture,
+	#home .cs-picture img {
+		pointer-events: none;
+	}
 }
 
 /* Desktop - 1024px */
@@ -2074,21 +2204,39 @@ html{
         text-align: left;
     }
 
-    #home .cs-container {
-        max-width: 80rem;
-        /* set to horizontal arrangement */
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 10rem;
-        margin-top: -100px;
-    }
+	#home .cs-container {
+		/* allow significantly wider layout on desktop */
+		max-width: 100rem;
+		/* set to horizontal arrangement */
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 6rem;
+		/* slightly less negative so the intro sits a bit lower (moved down slightly) */
+		margin-top: -40px;
+		/* center the container and keep horizontal padding so content isn't flush; increase by 25px */
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: calc(4rem + 25px);
+		padding-right: calc(4rem + 25px);
+	}
 
 	#home .cs-content { /*this moves the "Hi im sheila" header*/
-        text-align: left;
-        margin-top: -50px;
-        align-items: flex-start;
-        order: 1;
-    }
+		text-align: left;
+		/* reduce the negative top offset so the intro moves slightly down */
+		margin-top: 0;
+		align-items: flex-start;
+		order: 1;
+		flex: 1 1 60%;
+		max-width: none;
+	}
+
+	/* let the image take less space so the intro has more room */
+	#home .cs-image-group {
+		width: 38vw;
+		max-width: 28rem;
+		order: 2;
+		flex: 0 0 38vw;
+	}
 
     #home .cs-image-group {
         width: 40vw;
@@ -2099,6 +2247,14 @@ html{
         /* sends it to the right in the 2nd position */
         order: 2;
     }
+
+	
+	/* Let the intro paragraph use more horizontal space on desktop */
+		#home .paragraph-text {
+			max-width: none; /* KEEP THIS as is */
+			width: 100%;
+			line-height: 1.6; /* ADD THIS for better readability if text is wider */
+		}
 }
 
 
@@ -2120,7 +2276,7 @@ html{
     font-size: 30px;
     font-weight: 700;
     font-family: poppins;
-    color: #235347;
+	color: #3D7256;
     text-transform: none;
     text-align: center;
 }
@@ -2150,8 +2306,8 @@ html{
 	#about .cs-content {
 	  /* set text align to left if content needs to be left aligned */
 	  text-align: left;
-	  width: 80%;
-	  max-width: 800px;
+	  width: 60%;
+	  max-width: 100px;
 	  display: flex;
 	  flex-direction: column;
 	  /* centers content horizontally, set to flex-start to left align */
@@ -2165,6 +2321,11 @@ html{
 	#about .cs-text {
 		margin-top: 50px;
 	  margin-bottom: 1rem;
+	}
+
+	/* Ensure About heading uses updated primary green regardless of inline style */
+	#about .cs-text {
+	    color: var(--primary) !important;
 	}
 	#about .cs-text:last-of-type,
 	#about .cs-text:last-of-type {
@@ -2209,7 +2370,7 @@ html{
 	  z-index: 1;
 	}
 	#about .cs-li-picture:before,
-	#about .cs-li-picture:before {  /*lowk i have no idea what this code is doing*/
+	#about .cs-li-picture:before { 
 	  content: '';
 	  width: 100%;
 	  height: 100%;
@@ -2257,8 +2418,8 @@ html{
         text-align: center;
 		letter-spacing: normal;
         margin: 0;
-        color: #235347;
-        border-color: #235347;
+	color: var(--primary);
+	border-color: var(--primary);
         min-width: 9.375rem;
         padding: 0 1.5rem;
         background-color: var(--primary);
@@ -2278,7 +2439,7 @@ html{
 	  position: absolute;
 	  height: 100%;
 	  width: 0%;
-	  background: #235347;
+			background: var(--primary);
 	  opacity: 1;
 	  top: 0;
 	  left: 0;
@@ -2293,16 +2454,16 @@ html{
 	#about .cs-picture,
 	#about .cs-picture {
 	  width: 100%;
-	  margin-left: 70px;
-	  margin-top: 80px;
-	  max-width: 27.625rem;
-	  max-height: 33.625rem;
-	  border-radius: 1.5rem;
-	  /* clips img tag corners */
-	  overflow: hidden;
-	  display: block;
-	  position: relative;
-	  z-index: 1;
+		margin-left: 20px; /* CHANGE FROM 70px to 0px or negative value like -30px */
+		margin-top: 80px;
+		max-width: 25.625rem;
+		max-height: 33.625rem;
+		border-radius: 1.5rem;
+		/* clips img tag corners */
+		overflow: hidden;
+		display: block;
+		position: relative;
+		z-index: 1;
 	}
 	#about .cs-picture img,
 	#about .cs-picture img {
@@ -2327,8 +2488,18 @@ html{
 	}
 	#about .cs-content,
 	#about .cs-content {
-	  width: 50%;
-	  padding: 2.5rem 0;
+		margin-top: 30px;
+	  	text-align: left;
+		width: 90%; /* CHANGE FROM 80% to 90% or even 95% */
+		max-width: 900px; /* INCREASE FROM 800px to 900px or 1000px */
+		display: flex;
+		flex-direction: column;
+		/* centers content horizontally, set to flex-start to left align */
+		align-items: flex-start;
+		font-family: Arial, Helvetica, sans-serif;
+		color: black;
+		font-size: 16px;
+		margin-right: 100px;
 	}
 	#about .cs-picture,
 	#about .cs-picture {
@@ -2339,14 +2510,20 @@ html{
   
   /* WHERE I'VE WORKED SO FAR */
 	.workplaces{
-		margin-top: 100px;
-		font-size: 33px; 
-		color: #235347; /* Adjust the color */
-		text-align: center; /* Center-align the text horizontally */
-		font-family: POPPINS; /* Change the font */
-		display: flex; /* Use flexbox for centering */
-		justify-content: center; /* Center horizontally */
-		align-items: center; /* Center vertically */
+		margin-top: 60px;
+		margin-bottom: 47px; /* ADD THIS LINE */
+		font-size: 30px; 
+		color: #3D7256;
+		text-align: center;
+		font-family: POPPINS;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+	/* Small vertical gap between About and Work sections */
+	#work {
+	    margin-top: 30px;
+	}
 	}
 
 /* ----------------------------- */
@@ -2361,7 +2538,7 @@ html{
 			margin-top: 75px;
 			margin-bottom: 40px;
 			font-size: 25px; 
-			color: #235347; /* Adjust the color */
+			color: #3D7256; /* Adjust the color */
 			text-align: center; /* Center-align the text horizontally */
 			font-family: poppins; /* Change the font */
 			display: flex; /* Use flexbox for centering */
@@ -2547,17 +2724,17 @@ html{
     #gallery-1152 {
         padding: var(--sectionPadding);
     }
-    #gallery-1152 .cs-container {
-        width: 100%;
-        /* changes to 1280px at large desktop */
-        max-width: 59rem;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* 48px - 64px */
-        gap: clamp(3rem, 6vw, 4rem);
-    }
+	#gallery-1152 .cs-container {
+		/* keep the gallery container full width but avoid additional transforms that shift it */
+		width: 100%;
+		max-width: none;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		/* 48px - 64px */
+		gap: clamp(3rem, 6vw, 4rem);
+	}
     #gallery-1152 .cs-content {
         /* set text align to left if content needs to be left aligned */
         text-align: center;
@@ -2572,38 +2749,52 @@ html{
         color: #767676;
     }
     #gallery-1152 .cs-title {
-        margin-top: 50px;
-		font-size: 20px;
-		color:#235347;
+		margin-top: 50px;
+		font-size: 25px; /* match projects header size */
+		color:#3D7256;
 		letter-spacing: normal;
 		text-transform: none;
 		font-family: POPPINS;
-		FONT-WEIGHT: 700;
-		margin-bottom: -30px;
+		font-weight: 700;
+		margin-bottom: 24px; /* add breathing room between title and gallery */
     }
-    #gallery-1152 .cs-gallery {
-        width: 100%;
-        /* changes to 100% at tablet */
-        max-width: 31.25rem;
-        padding: 0;
-        margin: 0;
-		margin-bottom: 80px;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        /* 16px - 20px */
-        gap: clamp(1rem, 1.5vw, 1.25rem);
-    }
-    #gallery-1152 .cs-image {
-        /* 260px - 360px */
-        min-height: clamp(16.25rem, 60vw, 20rem);
-        border-radius: 1rem;
-        /* clips the image corners */
-        overflow: hidden;
-        display: block;
-        grid-column: span 12;
-        grid-row: span 1;
-        position: relative;
-    }
+	#gallery-1152 .cs-gallery {
+		/* full-bleed gallery placed outside the centered container */
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100vw;
+		max-width: none;
+		padding: 0;
+		margin: 0;
+		/* reduce vertical space to footer */
+		margin-bottom: 20px;
+		/* horizontal, touch-scrollable gallery */
+		display: flex;
+		flex-direction: row;
+		gap: clamp(1rem, 1.5vw, 1.25rem);
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		scroll-snap-type: x mandatory;
+		/* Prevent the gallery scroll from chaining to the page */
+		overscroll-behavior: contain;
+		/* Allow horizontal pan on touch */
+		touch-action: pan-x;
+		padding-bottom: 1rem; /* give space for scrollbar on some UAs */
+	}
+	#gallery-1152 .cs-image {
+		/* 260px - 360px */
+		min-height: clamp(16.25rem, 60vw, 20rem);
+		border-radius: 0; /* remove rounded corners */
+		/* clips the image corners if needed */
+		overflow: hidden;
+		display: block;
+		/* make each image a horizontal tile */
+		flex: 0 0 auto;
+		width: clamp(240px, 70vw, 360px);
+		scroll-snap-align: start;
+		position: relative;
+	}
     #gallery-1152 .cs-image img {
         position: absolute;
         top: 0;
@@ -2669,7 +2860,9 @@ html{
 	text-align: left; /* Ensure text is aligned to the left */
 }
 .footer-col-right{
+	
 	text-align: right; /* Align text to the right for the second column */
+	font-weight: 600; 
 
 }
 .footer-col h4{
@@ -2697,7 +2890,12 @@ html{
 	position: relative;
 	  line-height: 1.5em;
 	  text-align: left;
-	  color:#235347;
+		color:#3D7256;
+}
+
+/* Reduce footer top spacing so gallery sits closer to footer */
+.footer .row {
+    margin-top: 40px;
 }
 
 
