@@ -1778,6 +1778,96 @@ input, select, textarea {
 
 		}
 
+		/* Make project cards a bit wider so image + text span more horizontally */
+@media only screen and (min-width: 48rem) {
+	.cs-card-group {
+		display: grid;
+		/* make each project card wider on tablet+ so images take more horizontal space */
+		grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); /* increased from 380px */
+		gap: 1.5rem;
+	}
+
+  .cs-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .cs-item .cs-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* On larger screens, allow even wider cards */
+@media only screen and (min-width: 64rem) {
+	.cs-card-group {
+		/* larger min width on wide screens so each project image/card is wider */
+		grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+		gap: 2rem;
+	}
+}
+
+/* Mobile friendliness tweaks: images, typography, header/nav and buttons on small viewports */
+@media screen and (max-width: 736px) {
+	/* Make all images responsive by default */
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	/* Slightly reduce base font-size for very small screens */
+	body {
+		font-size: 15px;
+		line-height: 1.5;
+	}
+
+	/* Header/nav adjustments so links wrap and remain tappable */
+	#header {
+		padding: 1.75em 0 0.1em 0;
+	}
+
+	#header nav {
+		position: static;
+		padding: 0.25rem 1rem;
+		display: flex;
+		justify-content: flex-end;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		font-size: 0.85rem;
+	}
+
+	#header nav ul {
+		flex-wrap: wrap;
+	}
+
+	/* Allow the intro heading to wrap on small screens */
+	#home .cs-title {
+		white-space: normal;
+		font-size: clamp(1.5rem, 6vw, 2.2rem);
+	}
+
+
+	/* Make paragraph text more readable on mobile */
+	#home .paragraph-text, #about .paragraph-text, #projects .cs-item-text {
+		font-size: 1rem;
+		margin-right: 0;
+		max-width: 100%;
+	}
+
+	/* Ensure home buttons wrap neatly */
+	.home-buttons {
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	/* Slightly narrower gallery tiles on small screens */
+	#gallery-1152 .cs-image {
+		width: clamp(200px, 60vw, 320px);
+	}
+}
+
 
 
 /*  HEADER, LOGO, AND NAV BAR (DO NOT TOUCH!!) */
@@ -2027,7 +2117,7 @@ html, body, #wrapper, .inner, * {
 	border-color: var(--primary);
     min-width: 9.375rem;
     padding: 0 1.5rem;
-    background-color: var(--primary);
+	background-color: #ffffff; /* default: white */
     border-radius: 0rem;
     display: inline-block;
     position: relative;
@@ -2036,7 +2126,7 @@ html, body, #wrapper, .inner, * {
     box-sizing: border-box;
     outline: 0;
     border-radius: .35rem;
-	box-shadow: inset 0 0 0 0px var(--primary);
+	box-shadow: none;
 }
 
 /* Container for the three buttons (resume left, icons right) */
@@ -2146,13 +2236,13 @@ html, body, #wrapper, .inner, * {
         z-index: -1;
         border-radius: 0rem;
         transition: width 0.3s;
-		box-shadow: inset 0 0 0 2px var(--primary);
+	box-shadow: none;
     }
 
 	#home .cs-button-solid:hover:before, .cs-email:hover:before, .cs-resume:hover:before {
 		width: 100%;
 		background-color: var(--primary);
-		box-shadow: inset 0 0 0 2px var(--primary);
+		box-shadow: none;
 	}
 
     #home .cs-image-group {
@@ -2319,7 +2409,10 @@ html, body, #wrapper, .inner, * {
 	}
 	#about .cs-text,
 	#about .cs-text {
-		margin-top: 50px;
+		font-size: 30px;
+		font-family: POPPINS, sans-serif;
+		font-weight: 700;
+		margin-top: 40px;
 	  margin-bottom: 1rem;
 	}
 
@@ -2418,11 +2511,11 @@ html, body, #wrapper, .inner, * {
         text-align: center;
 		letter-spacing: normal;
         margin: 0;
-	color: var(--primary);
-	border-color: var(--primary);
-        min-width: 9.375rem;
-        padding: 0 1.5rem;
-        background-color: var(--primary);
+		color: var(--primary);
+ 		border-color: var(--primary);
+	min-width: 9.375rem;
+	padding: 0 1.5rem;
+	background-color: #ffffff; /* default white; hover turns green */
         border-radius: 0rem;
         display: inline-block;
         position: relative;
@@ -2550,37 +2643,73 @@ html, body, #wrapper, .inner, * {
 	#projects a {
 		text-decoration: none !important;
 	}
-    #projects .cs-container {
-        width: 100%;
-		margin-left: 100px; /*CHANGE THIS TO MAKE UR THING MOVE*/
+	/* Projects container: keep a small page margin and allow content to expand
+	   within a reasonable max-width so project cards are wider */
+	#projects .cs-container {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0 36px; /* small page margins left/right */
 		margin-bottom: 40px;
-        max-width: 110rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+		max-width: 1300px; /* cap the projects area to avoid extremely wide rows */
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
 		text-decoration: none;
-
-    }
-    #projects .cs-card-group {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        row-gap: 0px; 
+	}
+	/* Project cards grid: responsive 1 / 2 / 3 columns with consistent gaps */
+	#projects .cs-card-group {
+		width: 100%;
+		margin: 0 auto;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr); /* mobile: single column */
+		gap: 1.5rem 1.5rem; /* row-gap column-gap */
 		text-decoration: none;
+	}
 
-    } 
-    #projects .cs-item {
-        list-style: none;
-        width: 100%;
-        display: flex;
-        grid-column: span 12;
-        flex-direction: column;
-        align-items: flex-start;
+
+	/* Skill tags container */
+	#projects .cs-skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin: 0.75rem 0 1rem 0;
+	}
+
+	/* Individual skill tag styling */
+	#projects .cs-skill-tag {
+		font-size: 0.58rem;
+		font-weight: 650;
+		padding: 0.32rem 0.7rem;
+		background-color: #E8F5E9;
+		color: var(--primary);
+		/* pill-shaped tags */
+		border-radius: 9999px;
+		border: 1px solid var(--primary);
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	/* Make project items have consistent spacing */
+	#projects .cs-item {
+		list-style: none;
+		width: 100%;
+		display: flex;
+		grid-column: auto; /* don't force spans here, let grid columns control layout */
+		flex-direction: column;
+		align-items: flex-start;
 		text-decoration: none;
+		margin-bottom: 1.5rem; /* Extra bottom margin for mobile */
+	}
 
-    }
+
+	/* Hover effect for skill tags */
+	#projects .cs-skill-tag:hover {
+		background-color: var(--primary);
+		color: #ffffff;
+		transition: all 0.3s ease;
+	}
     #projects .cs-item:hover .cs-picture img {
         opacity: .5;
         transform: scale(1.2);
@@ -2596,26 +2725,27 @@ html, body, #wrapper, .inner, * {
 		text-decoration: none;
 
     }
-    #projects .cs-picture {
-        width: 100%;
-        margin-bottom: 1.5rem;
-        background-color: #000;
-        overflow: hidden;
-        display: block;
-        position: relative;
+	/* Project images: make all project images consistent by giving the picture a fixed
+	   height per breakpoint and letting the img absolutely cover that area. */
+	#projects .cs-picture {
+		width: 100%;
+		margin-bottom: 0.75rem; /* tightened spacing between image and text */
+		background-color: #000;
+		overflow: hidden;
+		display: block;
+		position: relative;
 		text-decoration: none;
-
-    }
-    #projects .cs-picture img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        transition: transform .6s, opacity .3s;
-
-    }
+		height: 160px; /* default mobile height */
+	}
+	#projects .cs-picture img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform .6s, opacity .3s;
+		display: block;
+	}
     #projects .cs-h3 {
         letter-spacing: normal;
         font-size: 1.25rem;
@@ -2659,26 +2789,80 @@ html, body, #wrapper, .inner, * {
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #projects .cs-container { /*EDITING THIS IN CONJUCTION WITH .CS PICTURE BELOW ALLOWS YOU TO CHANGE SPACING OF THE PICTURES */
-        max-width: 110rem;
-		width: 1500px;
-    }
+	#projects .cs-container { /* tablet: keep container centered with symmetric margins */
+		width: 100%;
+		max-width: 1300px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0 36px;
+	}
+
+	/* Tablet: two equal columns that span available container width */
+	#projects .cs-card-group {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+
+	/* allow cards to use full column width so they are longer */
+	#projects .cs-item {
+		max-width: none;
+		margin: 0;
+	}
+
+	/* slightly larger project image on tablet */
+	#projects .cs-picture {
+		height: 300px;
+	}
     #projects .cs-content {
         flex-direction: row;
         justify-content: center;
         align-items: center;
     }
-    #projects .cs-flex {
+
+}
+
+/* Desktop: three columns for projects */
+@media only screen and (min-width: 81.25rem) {
+	/* Desktop: three columns that expand to fill the projects container */
+	#projects .cs-container {
+		/* Keep projects centered with equal left/right margins */
+		width: 100%;
+		max-width: 1400px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0 36px; /* preserve small page margins */
+	}
+
+	#projects .cs-card-group {
+		grid-template-columns: repeat(3, 1fr);
+		/* increase vertical spacing between rows while keeping columns tighter */
+		gap: 3rem 1.25rem; /* row-gap column-gap */
+	}
+
+	/* cards fill their grid column so each project is wider */
+	#projects .cs-item {
+		display: block;
+		width: 100%; /* fill the grid column so left/right spacing stays equal */
+		box-sizing: border-box;
+		max-width: none;
+		margin: 0;
+	}
+
+	/* slightly larger project image on desktop */
+	#projects .cs-picture {
+		height: 300px;
+		width: 100%; /* ensure the image fills the card column */
+	}
+	#projects .cs-flex {
         text-align: left;
-        width: 10vw;
-        max-width: 40rem;
+        max-width: 50rem;
         flex: none;
     }
     #projects .cs-title {
         margin: 0;
     }
     #projects .cs-text {
-        padding: 0.75rem 0 0.75rem 1.5rem;
+		padding: 0.75rem 0 0.75rem 0.5rem; /* reduce left padding so text aligns with image width */
 		text-decoration: none;
     }
     #projects .cs-text:after {
@@ -2692,27 +2876,19 @@ html, body, #wrapper, .inner, * {
 		text-decoration: none;
 
     }
-    #projects .cs-item {
-        grid-column: span 6;
+	/* ensure individual items do not force grid spans here */
+	#projects .cs-item {
+		grid-column: auto;
 		text-decoration: none;
+	}
+		#projects .cs-picture { /*EDITING THIS CHANGES THE HEIGHT and width OF THE PICTURES */
+					/* image should fill the grid column so widths match the text block */
+					max-height: 360px; /* increased so images appear larger on desktop */
+					width: 100%;
+				text-decoration: none;
 
-    }
-     #projects .cs-picture { /*EDITING THIS CHANGES THE HEIGHT and width OF THE PICTURES */
-        height: 270px;
-		width: 360px;
-		text-decoration: none;
-
-    }
-}
-/* Large Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-    #projects .cs-item {
-        grid-column: span 3;
-		text-decoration: none;
-
-    }
-}
-
+				}
+	}
 
 
   /*-- -------------------------- -->
@@ -2721,35 +2897,12 @@ html, body, #wrapper, .inner, * {
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #gallery-1152 {
-        padding: var(--sectionPadding);
-    }
-	#gallery-1152 .cs-container {
-		/* keep the gallery container full width but avoid additional transforms that shift it */
-		width: 100%;
-		max-width: none;
-		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		/* 48px - 64px */
-		gap: clamp(3rem, 6vw, 4rem);
+	#gallery-1152 {
+		padding: var(--sectionPadding);
+		color: #767676;
 	}
-    #gallery-1152 .cs-content {
-        /* set text align to left if content needs to be left aligned */
-        text-align: center;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        /* centers content horizontally, set to flex-start to left align */
-        align-items: center;
-    }
-
-    #gallery-1152 .cs-topper {
-        color: #767676;
-    }
     #gallery-1152 .cs-title {
-		margin-top: 50px;
+		margin-top: 100px;
 		font-size: 25px; /* match projects header size */
 		color:#3D7256;
 		letter-spacing: normal;
@@ -2759,17 +2912,16 @@ html, body, #wrapper, .inner, * {
 		margin-bottom: 24px; /* add breathing room between title and gallery */
     }
 	#gallery-1152 .cs-gallery {
-		/* full-bleed gallery placed outside the centered container */
+		/* Centered, scrollable gallery container.
+		   Avoid left:50% + translate which can shift at zoom; use auto margins so
+		   the gallery stays centered. Keep horizontal scroll inside the centered box. */
 		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 100vw;
-		max-width: none;
-		padding: 0;
-		margin: 0;
-		/* reduce vertical space to footer */
-		margin-bottom: 20px;
-		/* horizontal, touch-scrollable gallery */
+		left: auto;
+		transform: none;
+		width: 80vw;
+		max-width: 1400px;
+		margin: 0 auto 20px auto; /* center and keep bottom spacing */
+		padding: 0 18px 1rem 18px; /* small side padding so tiles don't touch edge */
 		display: flex;
 		flex-direction: row;
 		gap: clamp(1rem, 1.5vw, 1.25rem);
@@ -2780,7 +2932,6 @@ html, body, #wrapper, .inner, * {
 		overscroll-behavior: contain;
 		/* Allow horizontal pan on touch */
 		touch-action: pan-x;
-		padding-bottom: 1rem; /* give space for scrollbar on some UAs */
 	}
 	#gallery-1152 .cs-image {
 		/* 260px - 360px */
@@ -2915,3 +3066,5 @@ html, body, #wrapper, .inner, * {
 			}
 
 		}
+
+
