@@ -1,0 +1,585 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>All Projects - Sheila Zhang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<!-- Custom Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<link href="https://db.onlinewebfonts.com/c/c4d8819fda4c3fd79e36cedcc8d422bb?family=Halyard+Display" rel="stylesheet">
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- ========================================== -->
+			<!-- HEADER & NAVIGATION                        -->
+			<!-- ========================================== -->
+			<header id="header">
+			<div class="inner">
+				<!-- Logo -->
+				<a href="index.html" class="logo">
+					<span class="symbol"></span><span class="title">🍵 Sheila Zhang</span>
+				</a>
+
+				<!-- Navigation Menu -->
+				<nav class="navbar">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="index.html#about">About Me</a></li> 
+						<li><a href="index.html#work">Work</a></li>
+						<li><a href="all-projects.html">Projects</a></li>
+						<li><a href="pdfs/RESUME - SHEILA ZHANG.docx (6).pdf" target="_blank" rel="noopener">Resume</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>			<!-- ========================================== -->
+			<!-- MAIN CONTENT                               -->
+			<!-- ========================================== -->
+			<div id="main">
+				<div class="inner">
+					
+					<!-- ========================================== -->
+					<!-- RESPONSIVE STYLES                          -->
+					<!-- ========================================== -->
+					<style>
+						/* ============================================
+						   DESKTOP OPTIMIZATIONS (Ultra-wide & Large)
+						   ============================================ */
+						
+						/* Ultra-wide screens (1920px+) */
+						@media screen and (min-width: 1920px) {
+							#main .inner {
+								max-width: 1800px;
+								margin: 0 auto;
+							}
+							
+							#all-projects .cs-container {
+								max-width: 1600px;
+								margin: 0 auto;
+								padding-left: 120px;
+								padding-right: 120px;
+							}
+							
+							#main h1, #main .paragraph-text {
+								max-width: 1600px;
+								margin-left: auto;
+								margin-right: auto;
+								padding-left: 120px !important;
+								padding-right: 120px !important;
+							}
+						}
+						
+						/* Large desktop (1280px - 1919px) */
+						@media screen and (min-width: 1280px) and (max-width: 1919px) {
+							#main .inner {
+								max-width: 1400px;
+								margin: 0 auto;
+							}
+							
+							#all-projects .cs-container {
+								max-width: 1300px;
+								margin: 0 auto;
+							}
+						}
+						
+						/* ============================================
+						   TABLET OPTIMIZATIONS (Landscape)
+						   ============================================ */
+						@media screen and (min-width: 769px) and (max-width: 1024px) {
+							#all-projects .cs-container {
+								padding-left: 60px;
+								padding-right: 60px;
+							}
+							
+							#main h1, #main .paragraph-text {
+								padding-left: 60px !important;
+								padding-right: 60px !important;
+							}
+							
+							#all-projects .cs-h3 {
+								font-size: 1.1rem;
+							}
+							
+							#all-projects .cs-item-text {
+								font-size: 0.85rem;
+							}
+							
+							#all-projects .cs-skill-tag {
+								font-size: 0.7rem;
+							}
+						}
+						
+						/* ============================================
+						   MOBILE OPTIMIZATIONS
+						   ============================================ */
+						@media only screen and (max-width: 768px) {
+							#main h1 {
+								font-size: 1.5rem !important;
+								padding-left: 20px !important;
+								padding-right: 20px !important;
+							}
+							
+							#main .paragraph-text {
+								font-size: 0.9rem !important;
+								padding-left: 20px !important;
+								padding-right: 20px !important;
+							}
+						}
+					</style>
+					
+					<!-- ========================================== -->
+					<!-- PAGE HEADER                                -->
+					<!-- ========================================== -->
+					<h1 style="font-size: 2rem; font-weight: 800; color: #3D7256; padding-left: 100px; padding-right: 100px; margin-bottom: 1rem; margin-top: 1.5rem;">
+						Projects
+					</h1>
+					<p class="paragraph-text" style="font-size: 1rem; color: black; margin-bottom: 2rem; padding-left: 100px; padding-right: 100px;">
+						Explore all of my work across <strong style="color: #f2849e; font-weight: 550;">AI</strong>, <strong style="color: #f2849e; font-weight: 550;">product design</strong>, and <strong style="color: #f2849e; font-weight: 550;">software development</strong>.
+					</p>
+
+					<!-- ========================================== -->
+					<!-- PROJECTS SECTION                           -->
+					<!-- ========================================== -->
+					<section id="all-projects">
+						<style>
+							/* ============================================
+							   PROJECT GRID LAYOUT & STYLING
+							   ============================================ */
+							
+							/* Container spacing */
+							#all-projects .cs-container {
+								padding-left: 100px;
+								padding-right: 100px;
+							}
+							
+							/* Grid layout - 2 columns default */
+							#all-projects .cs-card-group {
+								grid-template-columns: repeat(2, 1fr) !important;
+							}
+							
+							/* Project card titles */
+							#all-projects .cs-h3 {
+								font-size: 1.2rem;
+								font-weight: 600;
+								margin-bottom: 0.5rem;
+								margin-top: 0.75rem;
+								color: black;
+							}
+							
+							/* Project descriptions */
+							#all-projects .cs-item-text {
+								font-size: 0.9rem;
+								flex-grow: 1;
+								min-height: 80px;
+								margin-bottom: 0.5rem;
+							}
+							
+							/* "Read More" links */
+							#all-projects .cs-fake-link {
+								font-size: 0.8rem;
+								margin-top: 0;
+								font-weight: 600;
+							}
+							
+							/* ============================================
+							   SKILL TAGS STYLING
+							   ============================================ */
+							#all-projects .cs-skills {
+								display: flex;
+								flex-wrap: wrap;
+								gap: 0.5rem;
+								margin: 0.25rem 0 0.75rem 0;
+							}
+							
+							#all-projects .cs-skill-tag {
+								display: inline-block;
+								background-color: #E8F5E9;
+								color: #3D7256;
+								padding: 0.28rem 0.65rem;
+								border-radius: 9999px;
+								border: 1px solid #3D7256;
+								font-size: 0.75rem;
+								font-weight: 650;
+								text-transform: uppercase;
+								letter-spacing: 0.5px;
+							}
+							
+							/* Skill tag hover effect */
+							#all-projects .cs-skill-tag:hover {
+								background-color: #3D7256;
+								color: #ffffff;
+								transition: all 0.3s ease;
+							}
+							
+							/* ============================================
+							   PROJECT CARD STRUCTURE
+							   ============================================ */
+							#all-projects .cs-item {
+								display: flex;
+								height: 100%;
+							}
+							
+							#all-projects .cs-link {
+								display: flex;
+								flex-direction: column;
+								height: 100%;
+							}
+							
+							/* ============================================
+							   PROJECT IMAGE STYLING & HOVER EFFECTS
+							   ============================================ */
+							#all-projects .cs-picture {
+								height: 320px;
+								overflow: hidden;
+							}
+							
+							#all-projects .cs-picture img {
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+								transition: transform 0.3s ease;
+							}
+							
+							/* Image zoom on hover */
+							#all-projects .cs-item:hover .cs-picture img {
+								transform: scale(1.05);
+							}
+							
+							/* ============================================
+							   RESPONSIVE GRID LAYOUTS
+							   ============================================ */
+							
+							/* 3-column grid for ultra-wide screens */
+							@media screen and (min-width: 1600px) {
+								#all-projects .cs-card-group {
+									grid-template-columns: repeat(3, 1fr) !important;
+									gap: 2rem;
+								}
+							}
+							
+							/* Single column for mobile */
+							@media only screen and (max-width: 768px) {
+								#all-projects .cs-card-group {
+									grid-template-columns: repeat(1, 1fr) !important;
+								}
+								
+								#all-projects .cs-container {
+									padding-left: 20px;
+									padding-right: 20px;
+								}
+								
+								#all-projects .cs-h3 {
+									font-size: 1.1rem;
+								}
+								
+								#all-projects .cs-item-text {
+									font-size: 0.85rem;
+									min-height: 60px;
+								}
+								
+								#all-projects .cs-picture {
+									height: 250px;
+								}
+								
+								#all-projects .cs-skill-tag {
+									font-size: 0.7rem;
+									padding: 0.25rem 0.6rem;
+								}
+							}
+						</style>
+						
+						<div class="cs-container">            
+							<ul class="cs-card-group">
+								
+								<!-- Product Design & Strategy Projects -->
+								
+								<!-- Tertia -->
+								<li class="cs-item">
+									<a href="tertia.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/tertia.png">
+											<source media="(min-width: 601px)" srcset="images/tertia.png">
+											<img loading="lazy" decoding="async" src="images/tertia.png" alt="Tertia platform">
+										</picture>
+										<h3 class="cs-h3">Tertia</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">User Research</span>
+											<span class="cs-skill-tag">Product Strategy</span>
+											<span class="cs-skill-tag">POC Design & Testing</span>
+										</div>
+										<p class="cs-item-text">
+											A platform designed for middle-tier content creators to combat burnout by automating routine tasks and content workflows, helping them maintain engagement even when they're offline.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- Real-Time Facial Emotion Detector -->
+								<li class="cs-item">
+									<a href="facial-emotion-detector.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/facial recognition.png">
+											<source media="(min-width: 601px)" srcset="images/facial recognition.png">
+											<img loading="lazy" decoding="async" src="images/facial recognition.png" alt="Facial Emotion Detection">
+										</picture>
+										<h3 class="cs-h3">Real-Time Facial Emotion Detector</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">Computer Vision & Face Detection</span>
+											<span class="cs-skill-tag">Deep Learning (CNN)</span>
+											<span class="cs-skill-tag">OpenCV & Real-time Processing</span>
+										</div>
+										<p class="cs-item-text">
+											Built a computer vision system that captures live webcam footage, detects faces using RetinaFace, and classifies emotions into 7 categories using DeepFace's pre-trained CNN model.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- SafePace -->
+								<li class="cs-item">
+									<a href="#" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/safepace.png">
+											<source media="(min-width: 601px)" srcset="images/safepace.png">
+											<img loading="lazy" decoding="async" src="images/safepace.png" alt="SafePace app">
+										</picture>
+										<h3 class="cs-h3">SafePace</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">Business Model</span>
+											<span class="cs-skill-tag">Go-to-Market</span>
+											<span class="cs-skill-tag">Pitching</span>
+											<span class="cs-skill-tag">User Research</span>
+										</div>
+										<p class="cs-item-text">
+											Safe Pace is a safety-first running app and all-female community that helps women feel safer running alone through real-time safety alerts, hazard reporting, background-verified users, and social features like nearby runners and run clubs.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- Real-Time Customer Shopping Dashboard -->
+								<li class="cs-item">
+									<a href="#" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/database app.png">
+											<source media="(min-width: 601px)" srcset="images/database app.png">
+											<img loading="lazy" decoding="async" src="images/database app.png" alt="Customer Shopping Dashboard">
+										</picture>
+										<h3 class="cs-h3">Real-Time Customer Shopping Dashboard</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">Cloud Integration</span>
+											<span class="cs-skill-tag">AWS</span>
+											<span class="cs-skill-tag">Data Modeling</span>
+											<span class="cs-skill-tag">Low-Code App Development</span>
+											<span class="cs-skill-tag">Data Visualization</span>
+										</div>
+										<p class="cs-item-text">
+											Built a database-backed web application using AWS and Budibase that displays live customer shopping data pulled directly from a cloud-hosted database in real time.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- AI & LLM Projects -->
+								
+								<!-- DataOps Pipeline -->
+								<li class="cs-item">
+									<a href="llm-dataops.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/dataopds.png">
+											<source media="(min-width: 601px)" srcset="images/dataopds.png">
+											<img loading="lazy" decoding="async" src="images/dataopds.png" alt="DataOps Pipeline">
+										</picture>
+										<h3 class="cs-h3">DataOps Pipeline for Common Business Challenges</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">Prompt Engineering</span>
+											<span class="cs-skill-tag">LLM Data Collection</span>
+											<span class="cs-skill-tag">LLM Evaluations</span>
+										</div>
+										<p class="cs-item-text">
+											An LLM-powered pipeline to automate data collection, labeling, and evaluation for production-ready datasets.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- E-Commerce RAG Assistant -->
+							<li class="cs-item">
+								<a href="ecommerce-rag.html" class="cs-link">
+									<picture class="cs-picture">
+										<source media="(max-width: 600px)" srcset="images/rag_assistant (1).png">
+										<source media="(min-width: 601px)" srcset="images/rag_assistant (1).png">
+										<img loading="lazy" decoding="async" src="images/rag_assistant (1).png" alt="E-Commerce RAG Assistant">
+									</picture>
+									<h3 class="cs-h3">E-Commerce Policy RAG Assistant</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">RAG</span>
+											<span class="cs-skill-tag">LangChain</span>
+											<span class="cs-skill-tag">Knowledge Base Curation</span>
+											<span class="cs-skill-tag">Retrieval Evaluation</span>
+										</div>
+										<p class="cs-item-text">
+											A RAG-based assistant that retrieves policy/product info to answer customer support queries.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- Conversation Summarizer -->
+								<li class="cs-item">
+									<a href="llm-finetuning.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/llama_finetuning (1).png">
+											<source media="(min-width: 601px)" srcset="images/llama_finetuning (1).png">
+											<img loading="lazy" decoding="async" src="images/llama_finetuning (1).png" alt="LLM Fine-Tuning">
+										</picture>
+										<h3 class="cs-h3">Conversation Summarizer</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">LLM Fine-Tuning (SFT/DPO)</span>
+											<span class="cs-skill-tag">Data Preparation</span>
+											<span class="cs-skill-tag">Hyperparameter Tuning</span>
+										</div>
+										<p class="cs-item-text">
+											Fine-tuned and aligned Llama-3.2-1B to summarize business conversations and generate company-style responses, optimizing quality using preference data.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- Negotiation Agents -->
+								<li class="cs-item">
+									<a href="negotiation-agents.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/negotiation_agents.png">
+											<source media="(min-width: 601px)" srcset="images/negotiation_agents.png">
+											<img loading="lazy" decoding="async" src="images/negotiation_agents.png" alt="Negotiation Agents">
+										</picture>
+										<h3 class="cs-h3">Negotiation Agents for Buying and Selling</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">Multi-Agent LLM Orchestration</span>
+											<span class="cs-skill-tag">Agent Design</span>
+											<span class="cs-skill-tag">Prompt Engineering</span>
+										</div>
+										<p class="cs-item-text">
+											A multi-agent LLM system that simulates negotiation scenarios to study automated bargaining strategies.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- Earlier Projects -->
+								
+								<!-- Mindful Match -->
+								<li class="cs-item">
+									<a href="mindfulmatch.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/updated mindful match.png">
+											<source media="(min-width: 601px)" srcset="images/updated mindful match.png">
+											<img loading="lazy" decoding="async" src="images/updated mindful match.png" alt="Mindful Match app">
+										</picture>
+										<h3 class="cs-h3">Mindful Match</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">UI/UX Design</span>
+											<span class="cs-skill-tag">Mobile App Design</span>
+											<span class="cs-skill-tag">User Research</span>
+										</div>
+										<p class="cs-item-text">
+											A mobile dating app centered on shared health and wellness goals.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- CRISPR Off-Target Framework -->
+								<li class="cs-item">
+									<a href="crispr.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/crisprproject.png">
+											<source media="(min-width: 601px)" srcset="images/crisprproject.png">
+											<img loading="lazy" decoding="async" src="images/crisprproject.png" alt="CRISPR research">
+										</picture>
+										<h3 class="cs-h3">CRISPR Off-Target Framework</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">Computational Biology</span>
+											<span class="cs-skill-tag">Genomics</span>
+											<span class="cs-skill-tag">Research</span>
+										</div>
+										<p class="cs-item-text">
+											2-year long computational biology and genomics research project to identify off-target edits in CRISPR. 
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========================================== -->
+		<!-- FOOTER                                     -->
+		<!-- ========================================== -->
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="footer-col">
+					<h4>@2025 by Sheila Zhang</h4>
+				</div>
+				<div class="footer-col-right">
+					<h4 style="font-weight: 600; color: #f2849e;">🌟 Let's connect at <a target="_blank" href="mailto:sheilazhang@utexas.edu" style="text-decoration: none;">sheilazhang@utexas.edu</a>!</h4>
+				</div>
+			</div>
+		</div>
+	</footer>		<!-- ========================================== -->
+		<!-- SCRIPTS                                    -->
+		<!-- ========================================== -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

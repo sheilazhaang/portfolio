@@ -9,312 +9,510 @@
 		<title>Sheila Zhang</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- Stylesheets -->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-		 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-		 <link href="https://db.onlinewebfonts.com/c/c4d8819fda4c3fd79e36cedcc8d422bb?family=Halyard+Display" rel="stylesheet">
 		
+		<!-- Custom Fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<link href="https://db.onlinewebfonts.com/c/c4d8819fda4c3fd79e36cedcc8d422bb?family=Halyard+Display" rel="stylesheet">
+		
+		<style>
+			/* ============================================
+			   SCROLL ANIMATIONS
+			   ============================================ */
+			.scroll-animate {
+				opacity: 0;
+				transform: translateY(30px);
+				transition: opacity 1s ease-out, transform 1s ease-out;
+			}
+			
+			.scroll-animate.active {
+				opacity: 1;
+				transform: translateY(0);
+			}
+			
+			/* ============================================
+			   DESKTOP OPTIMIZATIONS (Ultra-wide & Large)
+			   ============================================ */
+			
+			/* Ultra-wide screens (1920px+) */
+			@media screen and (min-width: 1920px) {
+				#main .inner {
+					max-width: 1800px;
+					margin: 0 auto;
+				}
+				
+				#projects .cs-container,
+				#work .cs-container {
+					max-width: 1600px;
+					margin: 0 auto;
+				}
+			}
+			
+			/* Large desktop (1280px - 1919px) */
+			@media screen and (min-width: 1280px) and (max-width: 1919px) {
+				#main .inner {
+					max-width: 1400px;
+					margin: 0 auto;
+				}
+				
+				#projects .cs-container {
+					max-width: 1300px;
+					margin: 0 auto;
+				}
+			}
+			
+			/* ============================================
+			   TABLET OPTIMIZATIONS (Landscape)
+			   ============================================ */
+			@media screen and (min-width: 769px) and (max-width: 1024px) {
+				#main .inner {
+					padding: 3rem 2rem !important;
+				}
+				
+				#projects .cs-skill-tag {
+					font-size: 0.55rem !important;
+				}
+			}
+			
+			/* ============================================
+			   MOBILE OPTIMIZATIONS
+			   ============================================ */
+			
+			/* Standard mobile (768px and below) */
+			@media screen and (max-width: 768px) {
+				#main .inner {
+					padding: 2rem 1.5rem !important;
+				}
+				
+				#projects .cs-item {
+					margin-bottom: 2rem !important;
+				}
+				
+				#projects .cs-h3 {
+					font-size: 1.1rem !important;
+				}
+				
+				#projects .cs-item-text {
+					font-size: 0.85rem !important;
+				}
+				
+				#projects .cs-skill-tag {
+					font-size: 0.5rem !important;
+					padding: 0.25rem 0.6rem !important;
+				}
+				
+				#projects .cs-picture {
+					height: 200px !important;
+				}
+				
+				#projects .projects-header {
+					flex-direction: column !important;
+					align-items: flex-start !important;
+					gap: 1rem;
+				}
+				
+				#projects .view-all-btn {
+					width: 100%;
+					text-align: center;
+				}
+				
+				#work .cs-container {
+					padding: 0 1rem !important;
+				}
+				
+				#about .inner {
+					padding: 2rem 1.5rem !important;
+				}
+				
+				.footer .row {
+					flex-direction: column;
+					text-align: center;
+				}
+				
+				.footer-col,
+				.footer-col-right {
+					margin-bottom: 1rem;
+				}
+			}
+			
+			/* Extra small devices (480px and below) */
+			@media screen and (max-width: 480px) {
+				#main .inner {
+					padding: 1.5rem 1rem !important;
+				}
+				
+				#projects .cs-h3 {
+					font-size: 1rem !important;
+				}
+				
+				#projects .cs-skill-tag {
+					font-size: 0.45rem !important;
+					padding: 0.2rem 0.5rem !important;
+				}
+			}
+		</style>
 	</head>
+	
 	<body class="is-preload">
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+			<!-- ========================================== -->
+			<!-- HEADER & NAVIGATION                        -->
+			<!-- ========================================== -->
+			<header id="header">
+				<div class="inner">
+					<!-- Logo -->
+					<a href="index.html" class="logo">
+						<span class="symbol"></span><span class="title">🍵 Sheila Zhang</span>
+					</a>
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"></span><span class="title">Sheila Zhang</span>
-								</a>
+					<!-- Navigation Menu -->
+					<nav class="navbar">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#about">About Me</a></li> 
+							<li><a href="#work">Work</a></li>
+							<li><a href="all-projects.html">Projects</a></li>
+							<li><a href="pdfs/RESUME - SHEILA ZHANG.docx (6).pdf" target="_blank" rel="noopener">Resume</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+			<!-- ========================================== -->
+			<!-- MAIN CONTENT                               -->
+			<!-- ========================================== -->
+			<div id="main">
 
-							<!-- Nav -->
-								<nav class="navbar">
-									<ul>
-										<!-- this nav bar goes to different section on same page -->
-										<li><a href="index.html">Home</a></li>
-										<li><a href="#about">About Me</a></li> 
-										<li><a href="#work">Work</a></li>
-										<li><a href="#projects">Projects</a></li>
-										<li><a href="pdfs/RESUME - SHEILA ZHANG.docx (6).pdf" target="_blank" rel="noopener">Resume</a></li>
-										
-
-										<!-- this nav goes to a separate page -->
-										<!-- <li><a href="index.html">Home</a></li>
-										<li><a href="generic.html">Work</a></li>
-										<li><a href="generic.html">Projects</a></li>
-										<li><a href="generic.html">Resume</a></li>
-										<li><a href="elements.html">About Me</a></li> -->
-									</ul>
-								</nav>
-						</div>
-					</header>
-
-		
-
-				<!-- HOME (HI IM SHEILA) -->
-					<div id="main">
-
-						<section id="home">
-							<div class="cs-container">
-								<!-- right Image Section -->
-								<div class="cs-image-group">
-									<!--Big Background Image-->
-									<picture class="cs-picture">
-										<img src="images/roller skating wave.png" alt="my bitmoji waving hi">
-									</picture>
-								</div>
-								<!-- left Content Section-->
-								<div class="cs-content">
-									<h2 class="cs-title">Hello, I'm Sheila!👋🏻 </h2>
-									<p class = "paragraph-text"><span class="highlight-pink">🎯 Aspiring Product Manager</span> with experience across software, user research, data analysis, and AI.<br><br>
-									🚀 My passions lie in building innovative products &amp; tools that <span class="highlight-pink">empower</span> and <span class="highlight-pink">delight users!</span></p>
+				<!-- ========================================== -->
+				<!-- HOME / HERO SECTION                        -->
+				<!-- ========================================== -->
+				<section id="home">
+					<style>
+						/* Hover effects for home section elements */
+						#home .cs-title {
+							transition: transform 0.3s ease;
+							cursor: pointer;
+						}
 						
-									<div class="home-buttons">
-										<!-- Resume button on the left -->
-										<a class="cs-resume cs-button-solid" aria-label="resume" target="_blank" href="pdfs/RESUME - SHEILA ZHANG.docx (6).pdf">Resume</a>
+						#home .cs-title:hover {
+							transform: scale(1.05);
+						}
+						
+						#home .cs-picture img {
+							transition: transform 0.3s ease !important;
+							cursor: pointer;
+						}
+						
+						#home .cs-picture img:hover {
+							transform: scale(1.05) !important;
+						}
+						
+						#home .cs-image-group {
+							transition: transform 0.3s ease;
+							cursor: pointer;
+						}
+						
+						#home .cs-image-group:hover {
+							transform: scale(1.05);
+						}
+					</style>
+					
+					<div class="cs-container">
+						<!-- Hero Image -->
+						<div class="cs-image-group">
+							<picture class="cs-picture">
+								<img src="images/roller skating wave.png" alt="my bitmoji waving hi">
+							</picture>
+						</div>
+						
+						<!-- Hero Content -->
+						<div class="cs-content">
+							<h2 class="cs-title">Hello, I'm Sheila!👋🏻</h2>
+							<p class="paragraph-text">
+								<span class="highlight-pink">🎯 Aspiring Product Manager</span> with experience across software, user research, data analysis, and AI.<br><br>
+								🚀 My passions lie in building innovative products &amp; tools that <span class="highlight-pink">empower</span> and <span class="highlight-pink">delight users!</span>
+							</p>
+				
+							<div class="home-buttons">
+								<!-- Resume button -->
+								<a class="cs-resume cs-button-solid" aria-label="resume" target="_blank" href="pdfs/RESUME - SHEILA ZHANG.docx (6).pdf">Resume</a>
 
-										<!-- Icon buttons group -->
-										<div style="display:flex; gap:0.5rem;">
-																						<a class="cs-icon-button" aria-label="LinkedIn" href="https://www.linkedin.com/in/sheilazhaang/" target="_blank" title="LinkedIn">
-																								<!-- Inline LinkedIn SVG to avoid dependency on icon fonts -->
-																																				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-																																					<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1 4.98 2.12 4.98 3.5zM0 8.98h5v15H0v-15zM8.5 8.98h4.78v2.05h.07c.67-1.27 2.31-2.61 4.75-2.61 5.08 0 6.01 3.34 6.01 7.68v8.88h-5v-7.86c0-1.87-.03-4.28-2.61-4.28-2.61 0-3.01 2.04-3.01 4.14v8z" fill="currentColor"/>
-																																				</svg>
-																								<span class="sr-only">LinkedIn</span>
-																						</a>
-																						<a class="cs-icon-button" aria-label="Email" href="mailto:sheilazhang@utexas.edu" title="Email">
-																								<!-- Inline mail SVG -->
-																																				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-																																					<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
-																																				</svg>
-																								<span class="sr-only">Email</span>
-																						</a>
-										</div>
-
-									</div>
-                                
+								<!-- Social media links -->
+								<div style="display:flex; gap:0.5rem;">
+									<a class="cs-icon-button" aria-label="LinkedIn" href="https://www.linkedin.com/in/sheilazhaang/" target="_blank" title="LinkedIn">
+										<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+											<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1 4.98 2.12 4.98 3.5zM0 8.98h5v15H0v-15zM8.5 8.98h4.78v2.05h.07c.67-1.27 2.31-2.61 4.75-2.61 5.08 0 6.01 3.34 6.01 7.68v8.88h-5v-7.86c0-1.87-.03-4.28-2.61-4.28-2.61 0-3.01 2.04-3.01 4.14v8z" fill="currentColor"/>
+										</svg>
+										<span class="sr-only">LinkedIn</span>
+									</a>
+									<a class="cs-icon-button" aria-label="Email" href="mailto:sheilazhang@utexas.edu" title="Email">
+										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+											<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+										</svg>
+										<span class="sr-only">Email</span>
+									</a>
 								</div>
 							</div>
-						</section>
-						<div class="inner">
+						</div>
+					</div>
+				</section>
+				
+				<div class="inner">
 
-					<!-- ======================== -->
-					<!--                 (About me)                  -->
-					<!-- ============================================ -->
-						<section id="about">
-							<div class="cs-container">
-								<picture class="cs-picture">
-									<source media="(max-width: 600px)" srcset="images/aboutme.jpg">
-									<source media="(min-width: 601px)" srcset="images/aboutme.jpg">
-									<img loading="lazy" decoding="async" src="images/aboutme.jpg" alt="volunteers" width="650" height="600" aria-hidden="true">
-								</picture>
-								<div class="cs-content">
-									<h1 class="cs-text">🙋🏻‍♀️ A little bit about me...</h1>
-									<p class="paragraph-text">Hi there! I'm a junior at The University of Texas at Austin, studying Computer Science and Business. I've always been fascinated by <span class="highlight-pink"><strong>how technology impacts human behavior</strong></span>, which fuels my passion for building user-centric products that solve real problems and make people's lives better.
+					<!-- ========================================== -->
+					<!-- ABOUT ME SECTION                           -->
+					<!-- ========================================== -->
+					<section id="about" class="scroll-animate">
+						<div class="cs-container">
+							<picture class="cs-picture">
+								<source media="(max-width: 600px)" srcset="images/aboutme.jpg">
+								<source media="(min-width: 601px)" srcset="images/aboutme.jpg">
+								<img loading="lazy" decoding="async" src="images/aboutme.jpg" alt="volunteers" width="650" height="600" aria-hidden="true">
+							</picture>
+							<div class="cs-content">
+								<h1 class="cs-text">🙋🏻‍♀️ A little bit about me...</h1>
+								<p class="paragraph-text">
+									Hi there! I'm a junior at The University of Texas at Austin, studying Computer Science and Business. I've always been fascinated by <span class="highlight-pink"><strong>how technology impacts human behavior</strong></span>, which fuels my passion for building user-centric products that solve real problems and make people's lives better.
 									<br><br>
 									I'm excited about user research, identifying pain points, and creating products that are <span class="highlight-pink"><strong>ethically designed</strong></span>. I want to blend my technical skills with my understanding of human behavior to create technology that truly adds value.
 									<br><br>
-									When I'm not strategizing product ideas, you'll find me hiking, playing pickleball, or having brunch at one of Austin's many great spots! :)</p>
-									<a href="" class="cs-button-solid">Learn More!</a>        
-								</div>
+									When I'm not strategizing product ideas, you'll find me hiking, playing pickleball, or having brunch at one of Austin's many great spots! :)
+								</p>
+								<a href="" class="cs-button-solid">Learn More!</a>        
 							</div>
-						</section>
+						</div>
+					</section>
+					
+					<!-- ========================================== -->
+					<!-- WORK EXPERIENCE SECTION                    -->
+					<!-- ========================================== -->
+					<section id="work" class="scroll-animate">
+						<style>
+							/* Logo hover effects */
+							#work .column img {
+								transition: transform 0.3s ease;
+								cursor: pointer;
+							}
 							
-						<!-- WHERE I'VE WORKED -->
-	
-						<section id = "work">
-							<h1 class = "workplaces">💼 Where I've Worked (so far)!</h1>
-							<div class="container" style="display: flex; justify-content: space-between;">
+							#work .column img:hover {
+								transform: scale(1.1);
+							}
+						</style>
+						
+						<h1 class="workplaces">💼 Where I've Worked (so far)!</h1>
+						<div class="container" style="display: flex; justify-content: space-between;">
 							<div class="column" style="flex: 1; padding: 0px; display: flex; justify-content: center; align-items: center;">
-								<img src="images/tiktko.png" alt="image1" style="width: auto; max-width: 80%; height: 80px; max-height: 200px;">
+								<img src="images/tiktko.png" alt="Tiktko" style="width: auto; max-width: 80%; height: 80px; max-height: 200px;">
 							</div>
 							<div class="column" style="flex: 1; padding: 0px; display: flex; justify-content: center; align-items: center;">
-								<img src="images/liberty.svg" alt="image2" style="width: auto; max-width: 80%; height: auto; max-height: 200px;">
+								<img src="images/liberty.svg" alt="Liberty Mutual" style="width: auto; max-width: 80%; height: auto; max-height: 200px;">
 							</div>
 							<div class="column" style="flex: 1; padding: 0px; display: flex; justify-content: center; align-items: center;">
-								<img src="images/utlogo.png" alt="image3" style="width: auto; max-width: 100%; height: auto; max-height: 200px; gap: 100px;">
+								<img src="images/utlogo.png" alt="University of Texas" style="width: auto; max-width: 100%; height: auto; max-height: 200px; gap: 100px;">
 							</div>
 							<div class="column" style="flex: 1; padding: 0px; display: flex; justify-content: center; align-items: center;">
 								<img src="images/jpm.png" alt="J.P. Morgan" style="width: auto; max-width: 80%; height: auto; max-height: 120px;">
 							</div>
 						</div>
 					</section>
-
-
-			
-						
-						<!-- <button class="custom-buttom" type="button">LEARN MORE ABOUT MY EXPERIENCE</button>						 -->
-
-						
-						
+					<!-- ========================================== -->
+					<!-- PROJECTS SECTION                           -->
+					<!-- ========================================== -->
+					<section id="projects" class="scroll-animate">
+						<style>
+							/* Projects header layout */
+							.projects-header {
+								display: flex;
+								justify-content: space-between;
+								align-items: center;
+								margin-top: 10px;
+								margin-bottom: 10px;
+							}
 							
-					<!-- ============================================ -->
-					<!--                  projects                   -->
-					<!-- ============================================ -->
-
-				<section id="projects">
-					<style>
-
-					</style>
-					<h1 class = "projects">Check out some of my projects!</h1>
-					<div class="cs-container">            
-						<ul class="cs-card-group">
-							<li class="cs-item">
-								<a href="llm-dataops.html" class="cs-link">
-									<picture class="cs-picture">
-										<!--Mobile Image-->
-										<source media="(max-width: 600px)" srcset="images/llm_dataops_pipeline.png">
-										<!--Tablet and above Image-->
-										<source media="(min-width: 601px)" srcset="images/llm_dataops_pipeline.png">
-										<img loading="lazy" decoding="async" src="images/llm_dataops_pipeline.png" alt="room">
-									</picture>
-									<h3 class="cs-h3">DataOps Pipeline for Common Business Challenges</h3>
-									<div class="cs-skills">
-										<span class="cs-skill-tag">Prompt Engineering</span>
-										<span class="cs-skill-tag">LLM Data Collection</span>
-										<span class="cs-skill-tag">LLM Evaluations</span>
-									</div>
-									<p class="cs-item-text">
-										An LLM-powered pipeline to automate data collection, labeling, and evaluation for production-ready datasets.
-									</p>
-									<span class="cs-fake-link">
-										Read More
-										<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
-									</span>
-								</a>
-							</li>
+							.projects-header h1 {
+								margin: 0;
+							}
 							
+							/* View all projects button */
+							.view-all-button {
+								background-color: transparent;
+								color: #3D7256;
+								padding: 0.65rem 1.3rem;
+								text-decoration: none;
+								border: 2px solid #3D7256;
+								border-radius: 4px;
+								font-weight: 600;
+								font-size: 1rem;
+								transition: all 0.3s ease;
+								margin-top: 2.0rem;
+							}
+							
+							.view-all-button:hover {
+								background-color: #3D7256;
+								color: white;
+							}
+						</style>
+						
+						<div class="cs-container">
+							<div class="projects-header">
+								<h1 class="projects">Check out some of my projects!</h1>
+								<a href="all-projects.html" class="view-all-button">View All Projects</a>
+							</div>							
+							<!-- Project Cards -->
+							<ul class="cs-card-group">
+								
+								<!-- E-Commerce RAG Assistant -->
 							<li class="cs-item">
-								<a href="ecommerce-rag.html"  class="cs-link">
+								<a href="ecommerce-rag.html" class="cs-link">
 									<picture class="cs-picture">
-										<!--Mobile Image-->
-										<source media="(max-width: 600px)" srcset="images/RAG image.jpg">
-										<!--Tablet and above Image-->
-										<source media="(min-width: 601px)" srcset="images/RAG image.jpg">
-										<img loading="lazy" decoding="async" src="images/RAG image.jpg" alt="E-Commerce RAG Assistant">
+										<source media="(max-width: 600px)" srcset="images/rag_assistant (1).png">
+										<source media="(min-width: 601px)" srcset="images/rag_assistant (1).png">
+										<img loading="lazy" decoding="async" src="images/rag_assistant (1).png" alt="E-Commerce RAG Assistant">
 									</picture>
 									<h3 class="cs-h3">E-Commerce Policy RAG Assistant</h3>
-									<div class="cs-skills">
-										<span class="cs-skill-tag">RAG</span>
-										<span class="cs-skill-tag">LangChain</span>
-										<span class="cs-skill-tag">Knowledge Base Curation</span>
-										<span class="cs-skill-tag">Retrieval Evaluation</span>
-									</div>
-									<p class="cs-item-text">
-										A RAG-based assistant that retrieves policy/product info to answer customer support queries.
-									</p>
-									<span class="cs-fake-link">
-										Read More
-										<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
-									</span>
-								</a>
-							</li>
-							
-							<li class="cs-item">
-								<a href="llm-finetuning.html"  class="cs-link">
-									<picture class="cs-picture">
-										<!--Mobile Image-->
-										<source media="(max-width: 600px)" srcset="images/llama_finetuning (1).png">
-										<!--Tablet and above Image-->
-										<source media="(min-width: 601px)" srcset="images/llama_finetuning (1).png">
-										<img loading="lazy" decoding="async" src="images/llama_finetuning (1).png" alt="LLM Fine-Tuning">
-									</picture>
-									<h3 class="cs-h3">Conversation Summarizer</h3>
-									<div class="cs-skills">
-										<span class="cs-skill-tag">LLM Fine-Tuning (SFT/DPO)</span>
-										<span class="cs-skill-tag">Data Preparation</span>
-										<span class="cs-skill-tag">Hyperparameter Tuning</span>
-									</div>
-									<p class="cs-item-text">
-										Fine-tuned and aligned Llama-3.2-1B to summarize business conversations and generate company-style responses, optimizing quality using preference data.
-									</p>
-									<span class="cs-fake-link">
-										Read More
-										<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
-									</span>
-								</a>
-							</li>
-							
-							<li class="cs-item">
-								<a href="negotiation-agents.html"  class="cs-link">
-									<picture class="cs-picture">
-										<!--Mobile Image-->
-										<source media="(max-width: 600px)" srcset="images/negotiation_agents.png">
-										<!--Tablet and above Image-->
-										<source media="(min-width: 601px)" srcset="images/negotiation_agents.png">
-										<img loading="lazy" decoding="async" src="images/negotiation_agents.png" alt="Negotiation Agents">
-									</picture>
-									<h3 class="cs-h3">Negotiation Agents for Buying and Selling</h3>
-									<div class="cs-skills">
-										<span class="cs-skill-tag">Multi-Agent LLM Orchestration</span>
-										<span class="cs-skill-tag">Agent Design</span>
-										<span class="cs-skill-tag">Prompt Engineering</span>
-									</div>
-									<p class="cs-item-text">
-										A multi-agent LLM system that simulates negotiation scenarios to study automated bargaining strategies.
-									</p>
-									<span class="cs-fake-link">
-										Read More
-										<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
-									</span>
-								</a>
-							</li>
-							
-							<li class="cs-item">
-								<a href="mindfulmatch.html"  class="cs-link">
-									<picture class="cs-picture">
-										<!--Mobile Image-->
-										<source media="(max-width: 600px)" srcset="images/mm3.JPEG">
-										<!--Tablet and above Image-->
-										<source media="(min-width: 601px)" srcset="images/mm3.JPEG">
-										<img loading="lazy" decoding="async" src="images/mm3.JPEG" alt="room">
-									</picture>
-									<h3 class="cs-h3">Mindful Match</h3>
-									<div class="cs-skills">
-										<span class="cs-skill-tag">Mobile App Design</span>
-										<span class="cs-skill-tag">User Research</span>
-										<span class="cs-skill-tag">UX/UI</span>
-									</div>
-									<p class="cs-item-text">
-										A mobile dating app centered on shared health and wellness goals.
-									</p>
-									<span class="cs-fake-link">
-										Read More
-										<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
-									</span>
-								</a>
-							</li>
-							
-							<li class="cs-item">
-								<a href="crispr.html"  class="cs-link">
-									<picture class="cs-picture">
-										<!--Mobile Image-->
-										<source media="(max-width: 600px)" srcset="images/crisprproject.png">
-										<!--Tablet and above Image-->
-										<source media="(min-width: 601px)" srcset="images/crisprproject.png">
-										<img loading="lazy" decoding="async" src="images/crisprproject.png" alt="room">
-									</picture>
-									<h3 class="cs-h3">CRISPR Off-Target Framework</h3>
-									<div class="cs-skills">
-										<span class="cs-skill-tag">Computational Biology</span>
-										<span class="cs-skill-tag">Genomics</span>
-										<span class="cs-skill-tag">Research</span>
-									</div>
-									<p class="cs-item-text">
-										2-year long computational biology and genomics research project to identify off-target edits in CRISPR. 
-									</p>
-									<span class="cs-fake-link">
-										Read More
-										<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
-									</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</section>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">RAG</span>
+											<span class="cs-skill-tag">LangChain</span>
+											<span class="cs-skill-tag">Knowledge Base Curation</span>
+											<span class="cs-skill-tag">Retrieval Evaluation</span>
+										</div>
+										<p class="cs-item-text">
+											A RAG-based assistant that retrieves policy/product info to answer customer support queries.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- Tertia -->
+								<li class="cs-item">
+									<a href="tertia.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/tertia.png">
+											<source media="(min-width: 601px)" srcset="images/tertia.png">
+											<img loading="lazy" decoding="async" src="images/tertia.png" alt="Tertia platform">
+										</picture>
+										<h3 class="cs-h3">Tertia</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">User Research</span>
+											<span class="cs-skill-tag">Product Strategy</span>
+											<span class="cs-skill-tag">POC Design & Testing</span>
+										</div>
+										<p class="cs-item-text">
+											A platform designed for middle-tier content creators to combat burnout by automating routine tasks and content workflows, helping them maintain engagement even when they're offline.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- Facial Emotion Detector -->
+								<li class="cs-item">
+									<a href="facial-emotion-detector.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/facial recognition.png">
+											<source media="(min-width: 601px)" srcset="images/facial recognition.png">
+											<img loading="lazy" decoding="async" src="images/facial recognition.png" alt="Facial Emotion Detection">
+										</picture>
+										<h3 class="cs-h3">Real-Time Facial Emotion Detector</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">Computer Vision & Face Detection</span>
+											<span class="cs-skill-tag">Deep Learning (CNN)</span>
+											<span class="cs-skill-tag">OpenCV & Real-time Processing</span>
+										</div>
+										<p class="cs-item-text">
+											Built a computer vision system that captures live webcam footage, detects faces using RetinaFace, and classifies emotions into 7 categories (happy, sad, angry, neutral, surprise, fear, disgust) using DeepFace's pre-trained CNN model.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- DataOps Pipeline -->
+								<li class="cs-item">
+									<a href="llm-dataops.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/dataopds.png">
+											<source media="(min-width: 601px)" srcset="images/dataopds.png">
+											<img loading="lazy" decoding="async" src="images/dataopds.png" alt="DataOps Pipeline">
+										</picture>
+										<h3 class="cs-h3">DataOps Pipeline for Common Business Challenges</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">Prompt Engineering</span>
+											<span class="cs-skill-tag">LLM Data Collection</span>
+											<span class="cs-skill-tag">LLM Evaluations</span>
+										</div>
+										<p class="cs-item-text">
+											An LLM-powered pipeline to automate data collection, labeling, and evaluation for production-ready datasets.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- Negotiation Agents -->
+								<li class="cs-item">
+									<a href="negotiation-agents.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/negotiation_agents.png">
+											<source media="(min-width: 601px)" srcset="images/negotiation_agents.png">
+											<img loading="lazy" decoding="async" src="images/negotiation_agents.png" alt="Negotiation Agents">
+										</picture>
+										<h3 class="cs-h3">Negotiation Agents for Buying and Selling</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">Multi-Agent LLM Orchestration</span>
+											<span class="cs-skill-tag">Agent Design</span>
+											<span class="cs-skill-tag">Prompt Engineering</span>
+										</div>
+										<p class="cs-item-text">
+											A multi-agent LLM system that simulates negotiation scenarios to study automated bargaining strategies.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+								
+								<!-- Conversation Summarizer -->
+								<li class="cs-item">
+									<a href="llm-finetuning.html" class="cs-link">
+										<picture class="cs-picture">
+											<source media="(max-width: 600px)" srcset="images/llama_finetuning (1).png">
+											<source media="(min-width: 601px)" srcset="images/llama_finetuning (1).png">
+											<img loading="lazy" decoding="async" src="images/llama_finetuning (1).png" alt="LLM Fine-Tuning">
+										</picture>
+										<h3 class="cs-h3">Conversation Summarizer</h3>
+										<div class="cs-skills">
+											<span class="cs-skill-tag">LLM Fine-Tuning (SFT/DPO)</span>
+											<span class="cs-skill-tag">Data Preparation</span>
+											<span class="cs-skill-tag">Hyperparameter Tuning</span>
+										</div>
+										<p class="cs-item-text">
+											Fine-tuned and aligned Llama-3.2-1B to summarize business conversations and generate company-style responses, optimizing quality using preference data.
+										</p>
+										<span class="cs-fake-link">
+											Read More
+											<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/gold-chevron-right.svg" alt="" width="20" height="20" loading="lazy" decoding="async" aria-hidden="true">
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</section>
 
 						</div>
 					</div>
@@ -324,13 +522,8 @@
 			<!--                   ARTWORK GALLERY                    -->
 			<!-- ============================================ -->
 
-				<section id="gallery-1152">
-					<div class="cs-container">
-						<div class="cs-content">
-							<!-- <span class="cs-topper">Our Portfolio</span> -->
-							<h2 class="cs-title">Artwork ✨ </h2>
-						</div>
-					</div>
+				<section id="gallery-1152" style="margin-top: 3rem;" class="scroll-animate">
+					<h2 class="cs-title" style="max-width: 1300px; margin: 0 auto 1rem auto; padding: 0 36px; font-size: 1.8rem;">Artwork ✨ </h2>
 					<div class="cs-gallery">
 						<!--Picture 1-->
 						<picture class="cs-image">
@@ -365,46 +558,57 @@
 					</div>
 				</section>
 
-		<!-- RESUME BUTTON
-		<section id="resume">
-		<div class="resume-container">
-			<a class="cs-resume" aria-label="resume" target="_blank" href="pdfs/RESUME - SHEILA ZHANG.docx (6).pdf">Click here to view my resume!</a>
-		</div>
-		<style>
-
-			.resume-container{
-				padding-bottom: 30px;
-			text-align: center;
-			}
-		</style>
-		</section> -->
-				
-		<!-- FOOTER  -->
-
-				<footer class = "footer">
-					<div class = "container">
-						<div class = "row">
-							<div class ="footer-col">
-								<h4>@2025 by Sheila Zhang</h4>
-						
-							</div>
-							<div class ="footer-col-right">
-								<h4>Let's connect at <a target="_blank" href="mailto: sheilazhang@utexas.edu">sheilazhang@utexas.edu</a>!</h4>
-							</div>
-						</div>
+		<!-- ========================================== -->
+		<!-- FOOTER                                     -->
+		<!-- ========================================== -->
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="footer-col">
+						<h4>@2025 by Sheila Zhang</h4>
 					</div>
-				</footer>
+					<div class="footer-col-right">
+						<h4 style="font-weight: 600; color: #f2849e;">🌟 Let's connect at <a target="_blank" href="mailto:sheilazhang@utexas.edu" style="text-decoration: none;">sheilazhang@utexas.edu</a>!</h4>
+					</div>
+				</div>
+			</div>
+		</footer>
 
+		<!-- ========================================== -->
+		<!-- SCRIPTS                                    -->
+		<!-- ========================================== -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
+		<!-- Scroll Animation Script -->
+		<script>
+			// Check if element is in viewport
+			function isInViewport(element) {
+				const rect = element.getBoundingClientRect();
+				const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+				return (
+					rect.top <= windowHeight * 0.85 && // Element is 85% into viewport
+					rect.bottom >= 0 // Element hasn't scrolled past
+				);
+			}
 
+			// Add active class to elements in viewport
+			function handleScrollAnimation() {
+				const elements = document.querySelectorAll('.scroll-animate');
+				elements.forEach(element => {
+					if (isInViewport(element)) {
+						element.classList.add('active');
+					}
+				});
+			}
 
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+			// Initialize scroll animations
+			window.addEventListener('scroll', handleScrollAnimation);
+			window.addEventListener('load', handleScrollAnimation);
+			setTimeout(handleScrollAnimation, 100); // Run after page load
+		</script>
 	</body>
 </html>
