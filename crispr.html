@@ -2,6 +2,13 @@
 
 <html>
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        
         <link href="https://db.onlinewebfonts.com/c/b8e43844aee2ac9d9e78518e974389d9?family=Halyard+Display+Book" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,20 +16,63 @@
     </head>
     <body>
 
-        <h1>Rice CRISPR Treat</h1>
-        <p>I conducted a 2-year research project aimed at minimzing off-target effects in CRISPR gene editing using advanced machine learning techniques. The findings were showcased at various science fairs, highlighting the potential for more precise genome editing. 
-            <a target="_blank" href= "https://drive.google.com/file/d/1FpUQbMMhC0vO_NXGRPk7En-azWL4euX2/view">Click here to view my full presentation.</a> 
-        </p>
+        <!-- ========================================== -->
+        <!-- HEADER & NAVIGATION                        -->
+        <!-- ========================================== -->
+        <header id="header">
+            <div class="inner">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <span class="symbol"></span><span class="title">🍵 Sheila Zhang</span>
+                </a>
 
-        <img src="images/crisprproject.png" alt="app mockup" class="img-large">
+                <!-- Navigation Menu -->
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li> 
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="all-projects.html">Projects</a></li>
+                        <li><a href="pdfs/RESUME - SHEILA ZHANG.docx (6).pdf" target="_blank" rel="noopener">Resume</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
-        <p>Feel free to read my abstract for a better understanding of my project!
-        </p>
+        <!-- Main Content -->
+        <div id="main">
+            <div class="inner">
+                <h1>Rice CRISPR Treat</h1>
+                <p>For this project, I developed a computational framework to improve detection of off-target CRISPR-Cas9 edits using deep sequencing data and homology-targeted integration. I compiled genome sequencing datasets, ran next-generation sequencing analysis to flag abnormalities, and trained a model to compare those abnormalities against known off-target sites. Using precision/recall metrics and ROC curves, the prototype achieved ~84% classification accuracy compared to CRISPR’s typical ~60% off-target detection accuracy, illustrating how AI-driven approaches can make CRISPR-based gene editing safer and more reliable by scaling off-target screening.
+                </p>
 
-        <iframe 
-            src="pdfs/Sheila Zhang -TJAS Abstract 2022  (1).pdf" 
-            width="870" height="500">
-        </iframe>
+                <!-- Image Slideshow -->
+                <div class="slideshow-container">
+                    <div class="slide active">
+                        <img src="images/crispr1.png" alt="CRISPR Image 1">
+                    </div>
+                    <div class="slide">
+                        <img src="images/crispr2.png" alt="CRISPR Image 2">
+                    </div>
+                    
+                    <!-- Navigation arrows -->
+                    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                    
+                    <!-- Slide indicators -->
+                    <div class="slide-indicators">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                    </div>
+                </div>
+
+
+                <iframe
+                    src="pdfs/Sheila Zhang -TJAS Abstract 2022  (1).pdf" 
+                    width="870" height="500">
+                </iframe>
+            </div>
+        </div>
 
         <!-- CSS styling here -->
         <style>
@@ -36,25 +86,34 @@
             }
 
             h1{
-                color: #333333;
-                font-family: poppins;
+                color:#3b3b3b;
+                font-family: Poppins, system-ui, sans-serif;
+                font-weight: 700;
                 text-align: center;
-                margin-top: 130px;
+                margin-top: 0;
                 font-size: 35px;
-                margin-bottom: 5px;
+                margin-bottom: 0px;
+            }
+            h2{
+                color:#3b3b3b;
+                font-family: Poppins, system-ui, sans-serif;
+                font-weight: 700;
+                text-align: center;
+                margin-top: 0px;
+                font-size: 19px;
+                margin-bottom: 20px;
             }
             p{
-                color: grey;
-                /* font-family: Arial, Helvetica, sans-serif; */
-                font-family: "Halyard Display Book";
+                color: 	#636363;
+                font-family: Poppins, system-ui, sans-serif;
                 text-align: center;
                 padding-left: 20%;
                 padding-right: 20%; 
                 text-align: justify;
-                font-size: 17px;
+                font-size: 15px;
                 margin-top: 20px;
                 margin-bottom: 30px;
-                line-height: 25px;
+                line-height: 24px;
             }
             .img-large {
                 display: block;
@@ -66,6 +125,79 @@
                 object-fit: cover; /* Ensures the image covers the dimensions */
             }
 
+            /* Slideshow container */
+            .slideshow-container {
+                position: relative;
+                max-width: 870px;
+                margin: 0 auto 30px auto;
+                display: flex;
+                justify-content: center;
+            }
+
+            .slide {
+                display: none;
+            }
+
+            .slide.active {
+                display: block;
+            }
+
+            .slide img {
+                max-width: 870px;
+                width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                object-fit: contain;
+            }
+
+            /* Navigation arrows */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -22px;
+                padding: 16px;
+                color: white;
+                background-color: rgba(35, 115, 73, 0.7);
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.3s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .prev:hover, .next:hover {
+                background-color: rgba(35, 115, 73, 1);
+            }
+
+            /* Slide indicators */
+            .slide-indicators {
+                text-align: center;
+                padding-top: 15px;
+            }
+
+            .dot {
+                cursor: pointer;
+                height: 12px;
+                width: 12px;
+                margin: 0 5px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.3s ease;
+            }
+
+            .dot.active, .dot:hover {
+                background-color: #3D7256;
+            }
+
             iframe{
                 display: block;
                 margin-left: auto;
@@ -74,45 +206,47 @@
             }
         </style>
 
+        <!-- Slideshow JavaScript -->
+        <script>
+            let slideIndex = 1;
 
+            function changeSlide(n) {
+                showSlide(slideIndex += n);
+            }
 
+            function currentSlide(n) {
+                showSlide(slideIndex = n);
+            }
 
+            function showSlide(n) {
+                let slides = document.getElementsByClassName("slide");
+                let dots = document.getElementsByClassName("dot");
+                
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].classList.remove("active");
+                }
+                
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].classList.remove("active");
+                }
+                
+                slides[slideIndex - 1].classList.add("active");
+                dots[slideIndex - 1].classList.add("active");
+            }
+        </script>
 
-        
-
-            <!-- ========================================== -->
-			<!-- HEADER & NAVIGATION                        -->
-			<!-- ========================================== -->
-			<header id="header">
-				<div class="inner">
-					<!-- Logo -->
-					<a href="index.html" class="logo">
-						<span class="symbol"></span><span class="title">🍵 Sheila Zhang</span>
-					</a>
-
-					<!-- Navigation Menu -->
-					<nav class="navbar">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#about">About Me</a></li> 
-							<li><a href="#work">Work</a></li>
-							<li><a href="all-projects.html">Projects</a></li>
-							<li><a href="pdfs/RESUME - SHEILA ZHANG.docx (6).pdf" target="_blank" rel="noopener">Resume</a></li>
-						</ul>
-					</nav>
-				</div>
-			</header>
-
-                    <!-- FOOTER  -->
-
-				<footer class = "footer">
-					<div class = "container">
-						<div class = "row">
-							<div class ="footer-col">
-								<h4>@2025 by Sheila Zhang</h4>
-						
-							</div>
-							<div class ="footer-col-right">
+        <!-- FOOTER  -->
+        <footer class = "footer">
+            <div class = "container">
+                <div class = "row">
+                    <div class ="footer-col">
+                        <h4>@2025 by Sheila Zhang</h4>
+                
+                    </div>
+                    <div class ="footer-col-right">
 								<h4 style="font-weight: 750; color: #f2849e;">🌟 Let's connect at <a target="_blank" href="mailto:sheilazhang@utexas.edu" style="text-decoration: none; border-bottom: none;">sheilazhang@utexas.edu</a>!</h4>
 							</div>
 						</div>
@@ -157,7 +291,7 @@
                         #header .logo {
                             display: block;
                             border-bottom: 0;
-                            color: #235347;
+                            color: #237349;
                             font-weight: 900;
                             letter-spacing: 0.02em;
                             margin: 0 0 2.5em 0;
@@ -193,7 +327,7 @@
                         padding: 1em 2em;
                         box-sizing: border-box;
                         font-size: 0.65em;
-                        font: poppins;
+                        font-family: poppins;
                     }
             
                         #header nav ul {
@@ -227,7 +361,7 @@
             
                                 #header nav ul li a[href="#menu"] {
                                     -webkit-tap-highlight-color: transparent;
-                                    width: 417em;
+                                    width: 4em;
                                     text-indent: 4em;
                                     font-size: 1em;
                                     overflow: hidden;
