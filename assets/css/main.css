@@ -2551,7 +2551,7 @@ html, body, #wrapper, .inner, * {
 		margin-left: 20px; /* CHANGE FROM 70px to 0px or negative value like -30px */
 		margin-top: 80px;
 		max-width: 25.625rem;
-		max-height: 33.625rem;
+		max-height: none;
 		border-radius: 1.5rem;
 		/* clips img tag corners */
 		overflow: hidden;
@@ -2567,9 +2567,8 @@ html, body, #wrapper, .inner, * {
 	  position: absolute;
 	  top: 0;
 	  left: 0;
-	  object-fit: contain;
+	  object-fit: cover;
 	  object-position: center;
-	  background: #f7f4ef;
 	}
   }
   /* Small Desktop - 1024px */
@@ -2761,13 +2760,14 @@ html, body, #wrapper, .inner, * {
 	   height per breakpoint and letting the img absolutely cover that area. */
 	#projects .cs-picture {
 		width: 100%;
+		aspect-ratio: 16 / 9;
 		margin-bottom: 0.75rem; /* tightened spacing between image and text */
 		background-color: #000;
 		overflow: hidden;
 		display: block;
 		position: relative;
 		text-decoration: none;
-		height: 160px; /* default mobile height */
+		height: auto;
 	}
 	#projects .cs-picture img {
 		position: absolute;
@@ -2843,9 +2843,7 @@ html, body, #wrapper, .inner, * {
 	}
 
 	/* slightly larger project image on tablet */
-	#projects .cs-picture {
-		height: 300px;
-	}
+	#projects .cs-picture { height: auto; }
     #projects .cs-content {
         flex-direction: row;
         justify-content: center;
@@ -2883,9 +2881,45 @@ html, body, #wrapper, .inner, * {
 
 	/* slightly larger project image on desktop */
 	#projects .cs-picture {
-		height: 300px;
+		height: auto;
 		width: 100%; /* ensure the image fills the card column */
 	}
+
+/* Featured work: restrained motion and consistent card rhythm */
+#projects .featured-projects .cs-item:hover .cs-picture img {
+	opacity: 0.88;
+	transform: scale(1.04);
+}
+
+#projects .featured-projects .cs-h3 {
+	min-height: 3rem;
+	margin-bottom: 0.5rem;
+}
+
+#projects .featured-projects .cs-skills {
+	min-height: 2.4rem;
+}
+
+#projects .featured-projects .read-more-container {
+	display: none;
+}
+
+/* Shared structure for the three featured case studies */
+.case-study-page .project-meta {
+	color: var(--primary);
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-align: center;
+	text-transform: uppercase;
+	margin: -0.5rem auto 1.75rem;
+}
+
+.case-study-page iframe,
+.case-study-page video,
+.case-study-page .img-large {
+	max-width: 100%;
+}
 	#projects .cs-flex {
         text-align: left;
         max-width: 50rem;
