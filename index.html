@@ -174,7 +174,7 @@
 					<!-- Navigation Menu -->
 					<nav class="navbar">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="index.html" aria-current="page">Home</a></li>
 							<li><a href="about.html">About Me</a></li> 
 							<li><a href="#work">Work</a></li>
 							<li><a href="all-projects.html">Projects</a></li>
@@ -383,7 +383,7 @@
 						
 						<div class="cs-container">
 							<div class="projects-header">
-								<h1 class="projects">Featured product work</h1>
+								<h1 class="projects">Projects</h1>
 								<a href="all-projects.html" class="view-all-button">View All Projects</a>
 							</div>							
 							<!-- Project Cards -->
@@ -469,40 +469,29 @@
 			<!--                   ARTWORK GALLERY                    -->
 			<!-- ============================================ -->
 
-				<section id="gallery-1152" style="margin-top: 3rem;" class="scroll-animate">
-					<h2 class="cs-title" style="max-width: 1300px; margin: 0 auto 1rem auto; padding: 0 36px; font-size: 1.8rem;">Artwork ✨ </h2>
+				<section id="gallery-1152" class="scroll-animate" aria-labelledby="artwork-title">
+					<h2 id="artwork-title" class="cs-title">Creative Work</h2>
 					<div class="cs-gallery">
-						<!--Picture 1-->
-						<picture class="cs-image">
-							<source media="(max-width: 600px)" srcset="images/sketch1.jpg">
-							<source media="(min-width: 601px)" srcset="images/sketch1.jpg">
-							<img loading="lazy" decoding="async" src="images/sketch1.jpg" alt="gallery" width="272" height="320">
-						</picture>
-						<!--Picture 2-->
-						<picture class="cs-image">
-							<source media="(max-width: 600px)" srcset="images/painting1.jpg">
-							<source media="(min-width: 601px)" srcset="images/painting1.jpg">
-							<img loading="lazy" decoding="async" src="images/painting1.jpg" alt="gallery" width="272" height="320">
-						</picture>
-						<!--Picture 3-->
-						<picture class="cs-image">
-							<source media="(max-width: 600px)" srcset="images/sketch3.jpg">
-							<source media="(min-width: 601px)" srcset="images/sketch3.jpg">
-							<img loading="lazy" decoding="async" src="images/sketch3.jpg" alt="gallery" width="272" height="320">
-						</picture>
-						<!--Picture 4-->
-						<picture class="cs-image">
-							<source media="(max-width: 600px)" srcset="images/sketch6.jpg">
-							<source media="(min-width: 601px)" srcset="images/sketch6.jpg">
-							<img loading="lazy" decoding="async" src="images/sketch6.jpg" alt="gallery" width="272" height="320">
-						</picture>
-						<!--Picture 5-->
-						<picture class="cs-image">
-							<source media="(max-width: 600px)" srcset="images/sketch5.jpg">
-							<source media="(min-width: 601px)" srcset="images/sketch5.jpg">
-							<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/char5.jpg" alt="gallery" width="272" height="320">
-						</picture>
+						<button class="cs-image" type="button" data-artwork-src="images/painting1.jpg" aria-label="View still-life painting larger">
+							<img loading="lazy" decoding="async" src="images/painting1.jpg" alt="Still-life painting of fruit and a dark teapot" width="4192" height="3299">
+						</button>
+						<button class="cs-image" type="button" data-artwork-src="images/sketch1.jpg" aria-label="View fashion sketch larger">
+							<img loading="lazy" decoding="async" src="images/sketch1.jpg" alt="Fashion figure sketch in a flowing dress" width="3150" height="4192">
+						</button>
+						<button class="cs-image" type="button" data-artwork-src="images/sketch3.jpg" aria-label="View charcoal still life larger">
+							<img loading="lazy" decoding="async" src="images/sketch3.jpg" alt="Charcoal still life with bread, fruit, and a bottle" width="4192" height="3144">
+						</button>
+						<button class="cs-image" type="button" data-artwork-src="images/sketch6.jpg" aria-label="View classical portrait sketch larger">
+							<img loading="lazy" decoding="async" src="images/sketch6.jpg" alt="Charcoal study of a classical male bust" width="3058" height="4192">
+						</button>
+						<button class="cs-image" type="button" data-artwork-src="images/sketch5.jpg" aria-label="View charcoal still life study larger">
+							<img loading="lazy" decoding="async" src="images/sketch5.jpg" alt="Charcoal still life study of vessels and fruit" width="3057" height="4192">
+						</button>
 					</div>
+					<dialog class="artwork-lightbox" aria-label="Expanded artwork">
+						<button class="artwork-lightbox-close" type="button" aria-label="Close expanded artwork">&times;</button>
+						<img src="" alt="">
+					</dialog>
 				</section>
 
 		<!-- ========================================== -->
@@ -512,10 +501,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="footer-col">
-						<h4>@2025 by Sheila Zhang</h4>
+						<h4>&copy; 2026 Sheila Zhang</h4>
 					</div>
 					<div class="footer-col-right">
-						<h4 style="font-weight: 750; color: #f2849e;">🌟 Let's connect at <a target="_blank" href="mailto:sheilazhang@utexas.edu" style="text-decoration: none; border-bottom: none;">sheilazhang@utexas.edu</a>!</h4>
+						<h4>Let's connect · <a href="mailto:sheilazhang@utexas.edu">sheilazhang@utexas.edu</a></h4>
 					</div>
 				</div>
 			</div>
@@ -529,6 +518,7 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/artwork-gallery.js"></script>
 
 		<!-- Scroll Animation Script -->
 		<script>
