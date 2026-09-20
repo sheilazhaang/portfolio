@@ -2547,6 +2547,7 @@ html, body, #wrapper, .inner, * {
 	#about .cs-picture,
 	#about .cs-picture {
 	  width: 100%;
+	  aspect-ratio: 2 / 3;
 		margin-left: 20px; /* CHANGE FROM 70px to 0px or negative value like -30px */
 		margin-top: 80px;
 		max-width: 25.625rem;
@@ -2566,7 +2567,9 @@ html, body, #wrapper, .inner, * {
 	  position: absolute;
 	  top: 0;
 	  left: 0;
-	  object-fit: cover;
+	  object-fit: contain;
+	  object-position: center;
+	  background: #f7f4ef;
 	}
   }
   /* Small Desktop - 1024px */
@@ -3081,6 +3084,26 @@ html, body, #wrapper, .inner, * {
 }
 
 /* Reduce footer top spacing so gallery sits closer to footer */
+.ebay-logo {
+	display: inline-flex;
+	align-items: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: clamp(2.75rem, 5vw, 4.5rem);
+	font-weight: 500;
+	letter-spacing: -0.09em;
+	line-height: 1;
+	transition: transform 0.3s ease;
+}
+
+.ebay-logo:hover {
+	transform: scale(1.1);
+}
+
+.ebay-logo span:nth-child(1) { color: #e53238; }
+.ebay-logo span:nth-child(2) { color: #0064d2; }
+.ebay-logo span:nth-child(3) { color: #f5af02; }
+.ebay-logo span:nth-child(4) { color: #86b817; }
+
 .footer .row {
     margin-top: 40px;
 }
@@ -3102,5 +3125,3 @@ html, body, #wrapper, .inner, * {
 			}
 
 		}
-
-

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI-Powered Mortgage Underwriting Engine - Sheila Zhang</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-page { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 5rem; }
+        .project-page h1 { color: #3b3b3b; font-size: 35px; font-weight: 700; text-align: center; margin: 0 auto 20px; }
+        .project-page .lede, .project-section p { color: #636363; font-size: 15px; line-height: 20px; max-width: 870px; margin: 20px auto 30px; text-align: justify; }
+        .project-section { max-width: 870px; margin: 30px auto; }
+        .project-section h2 { color: #3b3b3b; font-size: 20px; font-weight: 600; margin: 30px 0 15px; }
+        .project-section ul { color: #636363; font-size: 15px; line-height: 22px; padding-left: 1.25rem; }
+        .project-section li { margin-bottom: 8px; }
+        .demo-video, .presentation-frame { display: block; width: 870px; max-width: 100%; margin: 0 auto 50px; border: 0; background: #111; }
+        .presentation-frame { height: 569px; background: #f7f4ef; }
+        .note { font-size: 13px !important; color: #777 !important; }
+        @media (max-width: 700px) {
+            .project-page { padding: 1rem 1.25rem 4rem; }
+            .project-page h1 { font-size: 30px; }
+            .presentation-frame { height: 56vw; min-height: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="inner">
+            <a href="index.html" class="logo"><span class="symbol"></span><span class="title">🍵 Sheila Zhang</span></a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="all-projects.html">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="project-page">
+        <h1>AI-Powered Mortgage Underwriting Engine</h1>
+        <p class="lede">A team-built prototype for self-employed mortgage applicants that turns complex financial documents into a structured, policy-grounded underwriting recommendation.</p>
+
+        <iframe class="presentation-frame" src="pdfs/mortgage-underwriting-presentation.pdf#page=1&amp;view=FitH" title="AI-Powered Mortgage Underwriting Engine presentation"></iframe>
+
+        <section class="project-section">
+            <h2>The problem</h2>
+            <p>Mortgage underwriting still depends heavily on manual document review. Self-employed applicants make that work especially difficult because their income can vary, deposits may not come through payroll, and applications often include complex business tax forms. Our team focused on reducing that review burden without hiding how the system reached its recommendation.</p>
+        </section>
+
+        <section class="project-section">
+            <h2>Our solution</h2>
+            <p>We designed an end-to-end workflow that extracts fields from borrower documents with Amazon Textract, normalizes nine document types into a shared schema, and routes the application through a 34-node decision engine. Nine RAG nodes retrieve relevant Fannie Mae policy sections so the system can return a recommendation with an explanation and supporting guideline references.</p>
+            <ul>
+                <li>A borrower portal adapts the document checklist to the applicant's business structure.</li>
+                <li>Real-time upload states show which documents are missing, processing, or verified.</li>
+                <li>An underwriter workstation runs the pipeline and presents verification results, metrics, and the final recommendation.</li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h2>Prototype impact</h2>
+            <ul>
+                <li><strong>~95% extraction accuracy</strong> demonstrated in prototype testing</li>
+                <li><strong>3-minute target</strong> for an initial eligibility decision</li>
+                <li><strong>83% estimated reduction</strong> in processing cost per loan</li>
+            </ul>
+            <p class="note">The time and cost figures are prototype projections from the project presentation, not production results.</p>
+        </section>
+
+        <section class="project-section">
+            <h2>Demo</h2>
+            <video class="demo-video" controls preload="metadata" playsinline>
+                <source src="videos/mortgage-underwriting-demo.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+            </video>
+        </section>
+
+        <section class="project-section">
+            <h2>Technology</h2>
+            <ul>
+                <li>Amazon Textract for query-based OCR and confidence scoring</li>
+                <li>FAISS with BAAI/bge-small-en-v1.5 embeddings for policy retrieval</li>
+                <li>Groq API with Llama 3.3 70B for guideline-grounded explanations</li>
+                <li>A shared Python schema contract connecting extraction and decisioning</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><div class="row">
+            <div class="footer-col"><h4>@2025 by Sheila Zhang</h4></div>
+            <div class="footer-col-right"><h4 style="font-weight: 750; color: #f2849e;">🌟 Let's connect at <a href="mailto:sheilazhang@utexas.edu" style="text-decoration: none; border-bottom: none;">sheilazhang@utexas.edu</a>!</h4></div>
+        </div></div>
+    </footer>
+</body>
+</html>
